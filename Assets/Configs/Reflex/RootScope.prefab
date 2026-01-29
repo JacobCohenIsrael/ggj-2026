@@ -57,3 +57,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdd29b30bc4b4b5f9de26537ebaa0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Overcrowded::Overcrowded.GameInstaller
+  _animationConfigs: {fileID: 11400000, guid: 9c18bce2e79c04834ae00f7ed340d63e, type: 2}
