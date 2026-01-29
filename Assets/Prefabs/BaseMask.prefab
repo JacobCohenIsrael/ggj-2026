@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4432869010738480595}
   m_Layer: 0
-  m_Name: Mask_Base
+  m_Name: BaseMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

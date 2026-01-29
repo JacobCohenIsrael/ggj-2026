@@ -448,6 +448,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 165099596390666743, guid: c5e0da7d1ff05426480ff907471c754c, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1841199097006180683, guid: c5e0da7d1ff05426480ff907471c754c, type: 3}
       propertyPath: m_TargetGraphic
       value: 
