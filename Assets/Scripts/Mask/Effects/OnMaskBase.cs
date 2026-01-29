@@ -12,7 +12,11 @@ namespace Overcrowded
         [Inject] private MaskChanger _maskChanger;
 
         [UsedImplicitly]
+        public Mask Mask { get; private set; } = null;
+
+        [UsedImplicitly]
         public bool Matches { get; private set; } = false;
+
 
         protected virtual void Awake()
         {
@@ -26,6 +30,7 @@ namespace Overcrowded
 
         private void HandleMaskChanged(Mask newMask)
         {
+            Mask = newMask;
             Matches = _masks.Contains(newMask);
             OnMatchedChanged(newMask, Matches);
         }
