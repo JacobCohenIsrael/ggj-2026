@@ -98,7 +98,7 @@ Material:
     - _GlossyReflections: 1
     - _GrassCut: 0
     - _GrassSaturation: 2
-    - _GrassShading: 0.16
+    - _GrassShading: 0.245
     - _GrassThinness: 1.14
     - _GrassThinnessIntersection: 0.43
     - _Metallic: 0
@@ -140,13 +140,13 @@ Material:
     - _ZWrite: 1
     - __NumberOfStacks: 17
     m_Colors:
-    - _Color: {r: 0.38305447, g: 0.4528302, b: 0.39722973, a: 1}
+    - _Color: {r: 0.35330874, g: 0.4458232, b: 0.55345905, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.90800005, g: 0.90800005, b: 0.90800005, a: 1}
     - _OffsetVector: {r: 0, g: 0, b: 0, a: 0}
     - _PJShadowColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ProjectedShadowColor: {r: 0.4528302, g: 0.42296267, b: 0.044855822, a: 1}
+    - _ProjectedShadowColor: {r: 0.02088518, g: 0.06202934, b: 0.6037736, a: 1}
     - _RimColor: {r: 0.14566667, g: 0.184, b: 0.09008333, a: 1}
-    - _SelfShadowColor: {r: 0.3026154, g: 0.46226418, b: 0, a: 1}
+    - _SelfShadowColor: {r: 0.013462067, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
