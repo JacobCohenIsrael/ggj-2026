@@ -1,2 +1,2 @@
 # ggj-2026
-Global Gam Jam 2026 Unity Project
+Global Game Jam 2026 Unity Project
