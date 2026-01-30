@@ -42,7 +42,7 @@ namespace Overcrowded
                 return;
 
             var mask = _masks[index];
-            _maskChanger.TrySetMask(mask);
+            _maskChanger.RequestSetMask(mask);
         }
 
         private int? GetInputMaskIndex()
