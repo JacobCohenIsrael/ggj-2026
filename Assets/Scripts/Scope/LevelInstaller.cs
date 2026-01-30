@@ -1,3 +1,4 @@
+using Overcrowded.Services;
 using Reflex.Attributes;
 using Reflex.Core;
 using Reflex.Enums;
@@ -16,6 +17,7 @@ namespace Overcrowded
         {
             containerBuilder.RegisterValue(_inventory);
             containerBuilder.RegisterType(typeof(MaskChanger), Lifetime.Singleton, Resolution.Eager);
+            containerBuilder.RegisterType(typeof(PlayerDeathService), Lifetime.Singleton, Resolution.Lazy);
         }
     }
 }
