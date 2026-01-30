@@ -1037,29 +1037,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ksenia
+  m_text: 'Rom Donag
 
-    Bar Ronen
-
-    Kfir Baluka
-
-    Jake Cohen
+    Ksenia Yaglikov
 
     Niv Caspi
 
-    Rom
-    Donag
+    Bar Ronen
 
-    Daniel Gluzman
-
-    Gal Ben Naim
+    Jake
+    Cohen
 
     Shir Ophir
 
-    Sahar malter
+    Daniel Gluzman
 
-    Alon
-    Talmi'
+    Alon Kaplan
+
+    Gal Ben Naim
+
+    Sahar
+    malter
+
+    Alon Talmi
+
+    Kfir Baluka'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0538b9714ce604b8dbdbc5c452473be8, type: 2}
   m_sharedMaterial: {fileID: -3092910171645643181, guid: 0538b9714ce604b8dbdbc5c452473be8, type: 2}
