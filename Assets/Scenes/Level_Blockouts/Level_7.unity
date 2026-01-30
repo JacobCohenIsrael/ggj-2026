@@ -786,6 +786,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4426920155664597885, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
+      propertyPath: _inventory._ownedMasks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426920155664597885, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
+      propertyPath: '_inventory._ownedMasks.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f147365cd8a78484bafdb85f1c8500db, type: 2}
+    - target: {fileID: 4426920155664597885, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
+      propertyPath: '_inventory._ownedMasks.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e2c10e42f0163470fbff3934ae708dac, type: 2}
     - target: {fileID: 4471770381458700744, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
