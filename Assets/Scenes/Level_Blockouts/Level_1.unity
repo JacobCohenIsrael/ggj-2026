@@ -569,7 +569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You're trial starts now
+  m_text: Your trial starts now
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c17df1855244048c990a91b4e6e1ea67, type: 2}
   m_sharedMaterial: {fileID: -5149922453234350515, guid: c17df1855244048c990a91b4e6e1ea67, type: 2}
@@ -2923,6 +2923,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38b85e1729972420b9a4a305c61810a2, type: 3}
+--- !u!1 &776517012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6963212749410407929, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
+  m_PrefabInstance: {fileID: 1113365134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &776517016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776517012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b2571d576e470faca6e396b2085a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Overcrowded::Overcrowded.Services.PlayerWonService
 --- !u!4 &806143951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7691792216730594655, guid: 38b85e1729972420b9a4a305c61810a2, type: 3}
@@ -3897,6 +3914,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4426920155664597885, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
+      propertyPath: _playerWonService
+      value: 
+      objectReference: {fileID: 776517016}
     - target: {fileID: 4471770381458700744, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3996,7 +4017,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6963212749410407929, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 776517016}
   m_SourcePrefab: {fileID: 100100000, guid: a6e1d6fda051b498593d0fbf975c91be, type: 3}
 --- !u!1001 &1136854147
 PrefabInstance:
