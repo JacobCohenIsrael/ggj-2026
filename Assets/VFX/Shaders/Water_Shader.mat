@@ -24,6 +24,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2DLOD_048e50d226bb4f038e57718d03262d2b_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bde484ac9af598b4ba528d8568e84dc0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_3c1e489f0d6e4dd68c4a07740451e160_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bde484ac9af598b4ba528d8568e84dc0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_dc5c7bd90224485c869f99e36b55b18b_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a7927ddc1561d704b97558f168ea5451, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_e869e643f4f84ecab32ef59e10bbc995_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: c0bb72bbd0e56c44f9367e94d8ba339a, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -50,9 +62,12 @@ Material:
     - _Float: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _VertexOffset_Height: 1
     - _Water_Scroll_Speed: 0.05
     m_Colors:
-    - _Tex_Scale: {r: 0.1, g: 0.2, b: 0, a: 0}
+    - _Caustic_Color: {r: 0.20283017, g: 0.9058218, b: 1, a: 1}
+    - _Tex_Scale: {r: 1, g: 2, b: 0, a: 0}
+    - _Water_Color: {r: 0, g: 0.33887666, b: 0.5, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2908002607827890626

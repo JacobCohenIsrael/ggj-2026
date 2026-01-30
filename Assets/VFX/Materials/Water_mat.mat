@@ -32,6 +32,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: bde484ac9af598b4ba528d8568e84dc0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_68ffaa8457984542b3672d9bf3ec6356_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a7927ddc1561d704b97558f168ea5451, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2DLOD_70385606cb2946478a5c792666a18207_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: a7927ddc1561d704b97558f168ea5451, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -78,7 +82,7 @@ Material:
     - _Water_Scroll_Speed: 0.2
     m_Colors:
     - _Caustic_Color: {r: 0.20283017, g: 0.9058218, b: 1, a: 1}
-    - _Tex_Scale: {r: 5, g: 9, b: 0, a: 0}
+    - _Tex_Scale: {r: 1, g: 1, b: 0, a: 0}
     - _Vector3: {r: 0, g: 0, b: 0, a: 0}
     - _Water_Color: {r: 0, g: 0.33887666, b: 0.5, a: 1}
   m_BuildTextureStacks: []
