@@ -7,6 +7,9 @@ namespace Overcrowded
     [Serializable]
     public class MaskInventory
     {
+        [SerializeField] private Mask _defaultMask;
+        public Mask DefaultMask => _defaultMask;
+
         [SerializeField] private List<Mask> _ownedMasks;
         public IReadOnlyList<Mask> OwnedMasks => _ownedMasks;
 

@@ -22,6 +22,10 @@ namespace Overcrowded
         protected virtual void Awake()
         {
             _maskChanger.OnMaskChanged += HandleMaskChanged;
+
+            var mask = _maskChanger.CurrentMask;
+            var matches = IsMatching(mask);
+            SetImmediate(mask, matches);
         }
 
         protected virtual void OnDestroy()
@@ -40,14 +44,21 @@ namespace Overcrowded
         {
             Mask = newMask;
 
+            var matches = IsMatching(newMask);
+
+            Matches = matches;
+
+            OnMatchedChanged(newMask, Matches);
+        }
+
+        private bool IsMatching(Mask newMask)
+        {
             var matches = _masks.Contains(newMask);
 
             if (_invert)
                 matches = !matches;
 
-            Matches = matches;
-
-            OnMatchedChanged(newMask, Matches);
+            return matches;
         }
 
         protected abstract void OnMatchedChanged(Mask newMask, bool matches);

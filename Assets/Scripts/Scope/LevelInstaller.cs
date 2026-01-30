@@ -1,4 +1,3 @@
-using System;
 using Reflex.Attributes;
 using Reflex.Core;
 using Reflex.Enums;
@@ -9,8 +8,6 @@ namespace Overcrowded
 {
     public class LevelInstaller : MonoBehaviour, IInstaller
     {
-        [SerializeField] private Mask _initialMask;
-
         [SerializeField] private MaskInventory _inventory;
 
         [Inject] private MaskChanger _maskChanger;
@@ -19,11 +16,6 @@ namespace Overcrowded
         {
             containerBuilder.RegisterValue(_inventory);
             containerBuilder.RegisterType(typeof(MaskChanger), Lifetime.Singleton, Resolution.Eager);
-        }
-
-        private void Awake()
-        {
-            _maskChanger.TrySetMask(_initialMask);
         }
     }
 }

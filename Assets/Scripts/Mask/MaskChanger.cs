@@ -1,18 +1,23 @@
 using System;
 using JetBrains.Annotations;
-using Reflex.Attributes;
 
 namespace Overcrowded
 {
     public class MaskChanger
     {
-        [Inject] private MaskInventory _inventory;
+        private readonly MaskInventory _inventory;
 
         public event Action<Mask> OnMaskChanged;
 
         public Mask CurrentMask { get; private set; }
 
         private int _blockRefCount = 0;
+
+        public MaskChanger(MaskInventory maskInventory)
+        {
+            _inventory = maskInventory;
+            CurrentMask = _inventory.DefaultMask;
+        }
 
         [UsedImplicitly]
         public IDisposable BlockMaskChanges()

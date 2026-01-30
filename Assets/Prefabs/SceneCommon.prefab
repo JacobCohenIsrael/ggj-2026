@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9edf76f72b904a19845c9eb2865f70ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Overcrowded::Overcrowded.LevelInstaller
-  _initialMask: {fileID: 11400000, guid: e642e0f0defd7423b97731a99a8857aa, type: 2}
   _inventory:
+    _defaultMask: {fileID: 11400000, guid: e642e0f0defd7423b97731a99a8857aa, type: 2}
     _ownedMasks:
     - {fileID: 11400000, guid: e642e0f0defd7423b97731a99a8857aa, type: 2}
 --- !u!1001 &6813423446658233358
