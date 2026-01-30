@@ -1,8 +1,9 @@
 using Overcrowded.Animations;
+using Overcrowded.Services;
 using Reflex.Core;
 using UnityEngine;
 
-namespace Overcrowded
+namespace Overcrowded.Scope
 {
     public class GameInstaller : MonoBehaviour, IInstaller
     {
@@ -13,6 +14,7 @@ namespace Overcrowded
         {
             containerBuilder.RegisterValue(_maskRegistry);
             containerBuilder.RegisterValue(new MaskChanger());
+            containerBuilder.RegisterValue(new LocalStorage());
             containerBuilder.RegisterValue(typeof(UserState));
             containerBuilder.RegisterValue(_visualConfigs);
         }

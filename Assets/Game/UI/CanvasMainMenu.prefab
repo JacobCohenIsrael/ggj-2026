@@ -404,7 +404,7 @@ MonoBehaviour:
   m_text: Mask Effect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1020,6 +1020,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4861370469197729991}
+  - {fileID: 1085061823032815440}
   m_Father: {fileID: 6792779434781174103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
@@ -1653,10 +1654,165 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7055617842441044457, guid: 112ee2842da274aa7ba0c783d582ca29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2638609146741326870}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4859579427778287142, guid: 112ee2842da274aa7ba0c783d582ca29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2815866916489319962}
   m_SourcePrefab: {fileID: 100100000, guid: 112ee2842da274aa7ba0c783d582ca29, type: 3}
 --- !u!224 &6792779434781174103 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7055617842441044457, guid: 112ee2842da274aa7ba0c783d582ca29, type: 3}
   m_PrefabInstance: {fileID: 4588706141087639742}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8997886744794496664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4859579427778287142, guid: 112ee2842da274aa7ba0c783d582ca29, type: 3}
+  m_PrefabInstance: {fileID: 4588706141087639742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2815866916489319962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8997886744794496664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de93ae7fda9d4379a57212b3de7597b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Overcrowded.Game.UI.MainMenuView
+  settingsView: {fileID: 2846589534621989994}
+  settingsButton: {fileID: 587327447739914778}
+--- !u!1001 &8562243907610505231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8621299723139157021}
+    m_Modifications:
+    - target: {fileID: 373912183235571907, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855870440479253846, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3617226130849867648, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_Name
+      value: SettingsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605995625872462294, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6689319007068287193, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145976231557324955, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+--- !u!224 &1085061823032815440 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8781415102610218847, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+  m_PrefabInstance: {fileID: 8562243907610505231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2846589534621989994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5859795962768952421, guid: 8237b55b7caf947a1b0140963d028eab, type: 3}
+  m_PrefabInstance: {fileID: 8562243907610505231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa21b186cf71476eae5d79d3e309461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Overcrowded.Game.UI.SettingsView
