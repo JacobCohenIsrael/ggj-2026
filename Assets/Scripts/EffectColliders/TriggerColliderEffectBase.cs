@@ -14,8 +14,11 @@ namespace Overcrowded
             if(!CanActivate())
                 return;
 
-            if (!TryActivate(other))
+            if (TryActivate(other))
+            {
                 _lastEffectTime = Time.timeAsDouble;
+                _activatedThisTrigger = true;
+            }
         }
         
         private void OnTriggerExit(Collider other)

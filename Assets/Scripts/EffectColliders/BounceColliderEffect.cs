@@ -30,6 +30,7 @@ namespace Overcrowded
 
         private void Bounce(FPSController playerController)
         {
+            Debug.Log("Bouncing player");
             playerController.AddVelocity(Direction * _force);
         }
     }
