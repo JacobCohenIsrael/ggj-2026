@@ -8,6 +8,7 @@ namespace Overcrowded
     public abstract class OnMaskBase : MonoBehaviour
     {
         [SerializeField] private List<Mask> _masks;
+        [SerializeField] private bool _invert;
 
         [Inject] private MaskChanger _maskChanger;
 
@@ -28,9 +29,9 @@ namespace Overcrowded
             _maskChanger.OnMaskChanged -= HandleMaskChanged;
         }
 
-        public void AddMask(Mask mask)
+        public void AddMasks(params Mask[] masks)
         {
-            _masks.Add(mask);
+            _masks.AddRange(masks);
 
             HandleMaskChanged(_maskChanger.CurrentMask);
         }
@@ -38,7 +39,14 @@ namespace Overcrowded
         private void HandleMaskChanged(Mask newMask)
         {
             Mask = newMask;
-            Matches = _masks.Contains(newMask);
+
+            var matches = _masks.Contains(newMask);
+
+            if (_invert)
+                matches = !matches;
+
+            Matches = matches;
+
             OnMatchedChanged(newMask, Matches);
         }
 
