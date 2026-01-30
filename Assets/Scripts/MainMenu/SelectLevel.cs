@@ -13,21 +13,26 @@ namespace Overcrowded
         [SerializeField] private Button button;
         [SerializeField] private TMP_Text levelNumberText;
         [SerializeField] private GameObject locked;
+        [SerializeField] private string _buttonPrefix = "Level ";
 
         [Inject] private UserState userState;
         private const string LevelSceneName = "Level_";
 
+        public bool Locked => levelNumber > userState.Level;
+
         private void Awake()
         {
-            if (userState.Level < levelNumber)
-                locked.SetActive(true);
+            locked.SetActive(Locked);
             
-            levelNumberText.text = levelNumber.ToString();
+            levelNumberText.text = $"{_buttonPrefix} {levelNumber}";
             button.onClick.AddListener(LoadLevelScene);
         }
 
         private void LoadLevelScene()
         {
+            if (Locked)
+                return;
+            
             SceneManager.LoadScene($"{LevelSceneName}{levelNumber}");
         }
 
