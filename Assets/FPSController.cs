@@ -33,6 +33,17 @@ namespace Overcrowded
         public float crouchingHeight = 1.1f;
         public float crouchTransitionSpeed = 12f;
 
+        [Header("Slide")]
+        [Tooltip("Layer(s) considered as slide surfaces (e.g., ice)")]
+        public LayerMask slideLayerMask;
+        [Tooltip("Deceleration when sliding (should be low, e.g., 1)")]
+        public float slideDeceleration = 1f;
+        [Tooltip("How much control the player has while sliding (0 = none, 1 = full)")]
+        [Range(0,1)]
+        public float slideControl = 0.2f;
+        [Tooltip("Max speed while sliding (optional, set high to ignore)")]
+        public float slideMaxSpeed = 8f;
+
         private CharacterController _cc;
         private PlayerInput _playerInput;
 
@@ -47,6 +58,7 @@ namespace Overcrowded
 
         private bool _isSprinting;
         private bool _isCrouching;
+        private bool _isSliding;
 
         private void Awake()
         {
@@ -78,7 +90,11 @@ namespace Overcrowded
 
         private void Update()
         {
-            ReadButtons();
+            CheckSlideGround();
+            if (!_isSliding)
+            {
+                ReadButtons();
+            }
             HandleLook();
             HandleMovement();
             HandleGravityAndGrounding();
@@ -96,13 +112,22 @@ namespace Overcrowded
             Vector3 inputDir = new Vector3(move.x, 0f, move.y);
             inputDir = Vector3.ClampMagnitude(inputDir, 1f);
 
-            float targetSpeed = _isCrouching ? crouchSpeed : (_isSprinting ? sprintSpeed : walkSpeed);
-
-            // Transform input to world (relative to player yaw)
-            Vector3 desired = transform.TransformDirection(inputDir) * targetSpeed;
-
-            // Smooth acceleration
-            _horizontalVel = Vector3.MoveTowards(_horizontalVel, desired, acceleration * Time.deltaTime);
+            if (_isSliding)
+            {
+                // Reduced control: blend input with current velocity, low acceleration
+                float targetSpeed = slideMaxSpeed;
+                Vector3 desired = transform.TransformDirection(inputDir) * targetSpeed;
+                // Only a fraction of input is applied
+                Vector3 blended = Vector3.Lerp(_horizontalVel, desired, slideControl);
+                // Slow down slowly, but allow some input
+                _horizontalVel = Vector3.MoveTowards(_horizontalVel, blended, slideDeceleration * Time.deltaTime);
+            }
+            else
+            {
+                float targetSpeed = _isCrouching ? crouchSpeed : (_isSprinting ? sprintSpeed : walkSpeed);
+                Vector3 desired = transform.TransformDirection(inputDir) * targetSpeed;
+                _horizontalVel = Vector3.MoveTowards(_horizontalVel, desired, acceleration * Time.deltaTime);
+            }
 
             // Apply horizontal move (vertical via _velocity.y)
             Vector3 motion = _horizontalVel;
@@ -198,6 +223,18 @@ namespace Overcrowded
         {
             Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
             Cursor.visible = !locked;
+        }
+
+        private void CheckSlideGround()
+        {
+            _isSliding = false;
+            if (!_cc.isGrounded) return;
+            Vector3 origin = transform.position + Vector3.up * 0.1f;
+            float checkDist = 0.3f;
+            if (Physics.Raycast(origin, Vector3.down, out RaycastHit hit, checkDist, slideLayerMask, QueryTriggerInteraction.Ignore))
+            {
+                _isSliding = true;
+            }
         }
     }
 }
