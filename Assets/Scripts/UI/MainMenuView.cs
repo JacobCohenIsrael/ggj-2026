@@ -1,6 +1,5 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Overcrowded.Game.UI.MainMenu
@@ -19,14 +18,11 @@ namespace Overcrowded.Game.UI.MainMenu
         [SerializeField] private Transform _settingsButtonsParent;
         [SerializeField] private Transform _levelSelectionButtonsParent;
 
-        private void Start()
+        private void Awake()
         {
             SetPositionX(_settingsButtonsParent, _moveDistance);
             SetPositionX(_levelSelectionButtonsParent, _moveDistance);
-        }
 
-        private void OnEnable()
-        {
             _openSettingsButton.onClick.AddListener(OpenSettings);
             _closeSettingsButton.onClick.AddListener(CloseSettings);
 

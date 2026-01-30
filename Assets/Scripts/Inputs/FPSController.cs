@@ -1,3 +1,4 @@
+using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -37,6 +38,8 @@ namespace Overcrowded
         [Tooltip("Max speed while sliding (optional, set high to ignore)")]
         public float SlideMaxSpeed = 8f;
 
+        [Inject] private LevelMenuView _levelMenuView;
+
         private CharacterController _cc;
         private PlayerInput _playerInput;
 
@@ -67,6 +70,9 @@ namespace Overcrowded
 
         private void Update()
         {
+            if (_levelMenuView.SettingsShown)
+                return;
+
             CheckSlideGround();
             HandleLook();
             HandleMovement();
