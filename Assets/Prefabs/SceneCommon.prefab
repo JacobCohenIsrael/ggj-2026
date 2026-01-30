@@ -175,13 +175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c180ceabaef4f099f4083299ffcddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Overcrowded::Overcrowded.SingleTargetTween.DoLightColorTweenOnMask
-  _light: {fileID: 5887462085438713462}
   _maskColors:
   - _mask: {fileID: 11400000, guid: e642e0f0defd7423b97731a99a8857aa, type: 2}
     _color: {r: 1, g: 0, b: 0, a: 1}
   - _mask: {fileID: 11400000, guid: f147365cd8a78484bafdb85f1c8500db, type: 2}
     _color: {r: 0, g: 0.10866976, b: 1, a: 1}
-  _channelSpeed: 1
+  _duration: 1
+  _light: {fileID: 5887462085438713462}
 --- !u!1 &2060829660922452542
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +292,8 @@ MonoBehaviour:
     _defaultMask: {fileID: 11400000, guid: e642e0f0defd7423b97731a99a8857aa, type: 2}
     _ownedMasks:
     - {fileID: 11400000, guid: e642e0f0defd7423b97731a99a8857aa, type: 2}
+  _changerConfigs:
+    _maskChangeCooldown: 0.5
 --- !u!1001 &6813423446658233358
 PrefabInstance:
   m_ObjectHideFlags: 0
