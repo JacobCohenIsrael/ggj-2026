@@ -1,5 +1,4 @@
 using Overcrowded.Services;
-using Reflex.Attributes;
 using Reflex.Core;
 using Reflex.Enums;
 using UnityEngine;
@@ -10,14 +9,14 @@ namespace Overcrowded
     public class LevelInstaller : MonoBehaviour, IInstaller
     {
         [SerializeField] private MaskInventory _inventory;
+        [SerializeField] private MaskChangerConfigs _changerConfigs;
 
-        [Inject] private MaskChanger _maskChanger;
-        
         public void InstallBindings(ContainerBuilder containerBuilder)
         {
             containerBuilder.RegisterValue(_inventory);
             containerBuilder.RegisterType(typeof(MaskChanger), Lifetime.Singleton, Resolution.Eager);
             containerBuilder.RegisterType(typeof(PlayerDeathService), Lifetime.Singleton, Resolution.Lazy);
+            containerBuilder.RegisterValue(_changerConfigs);
         }
     }
 }
