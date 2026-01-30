@@ -6,15 +6,15 @@ namespace Overcrowded
 {
     public abstract class FadeOutOnMaskBase : TweenOnMaskBase
     {
-        [Inject] private AnimationConfigs _animationConfigs;
+        [Inject] private MaskEffectsVisualConfigs _maskEffectsVisualConfigs;
 
         private float? _alpha;
 
-        protected override float Duration => _animationConfigs.FadeOutParams.Duration;
+        protected override float Duration => _maskEffectsVisualConfigs.FadeOutParams.Duration;
 
         protected override void Set(float progress)
         {
-            var curve = _animationConfigs.FadeOutParams.AnimationCurve;
+            var curve = _maskEffectsVisualConfigs.FadeOutParams.AnimationCurve;
             var evaluatedProgress = curve.Evaluate(progress);
             var newAlpha = Mathf.Lerp(1f, 0f, evaluatedProgress);
 

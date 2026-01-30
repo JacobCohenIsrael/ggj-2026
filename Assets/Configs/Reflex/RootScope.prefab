@@ -57,4 +57,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdd29b30bc4b4b5f9de26537ebaa0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Overcrowded::Overcrowded.GameInstaller
-  _animationConfigs: {fileID: 11400000, guid: 9c18bce2e79c04834ae00f7ed340d63e, type: 2}
+  _maskRegistry:
+    _allMasks:
+    - {fileID: 11400000, guid: f147365cd8a78484bafdb85f1c8500db, type: 2}
+    - {fileID: 11400000, guid: e2c10e42f0163470fbff3934ae708dac, type: 2}
+    - {fileID: 11400000, guid: 37c02196fc47a49ab8ff00f3083fcab9, type: 2}
+  _maskEffectsVisualConfigs: {fileID: 11400000, guid: 9c18bce2e79c04834ae00f7ed340d63e, type: 2}
+  _visualConfigs: {fileID: 11400000, guid: 8d39ed481753043a0b42bbcebab12359, type: 2}
