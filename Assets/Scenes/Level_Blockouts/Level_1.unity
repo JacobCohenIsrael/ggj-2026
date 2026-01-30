@@ -1861,6 +1861,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6919405245130136242, guid: bf875019377c848da8716ee33e24911f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8032426711739165050, guid: bf875019377c848da8716ee33e24911f, type: 3}
       propertyPath: m_Name
       value: Mask_Unlock_First
