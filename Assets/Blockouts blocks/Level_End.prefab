@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7731252769199889867}
   - component: {fileID: 5022924708099669930}
   - component: {fileID: 7242983357710247828}
+  - component: {fileID: 1795647421541128206}
   m_Layer: 0
   m_Name: Level_End
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +139,18 @@ CapsuleCollider:
   m_Height: 17.432962
   m_Direction: 1
   m_Center: {x: 0, y: 3.7164629, z: 0}
+--- !u!114 &1795647421541128206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774215371561722093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb5a4d1101d48a7a182339ccb0adaef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Overcrowded::Overcrowded.OnReachedEnd
 --- !u!1001 &5870177477971615820
 PrefabInstance:
   m_ObjectHideFlags: 0
