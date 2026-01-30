@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7774215371561722093}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -174,17 +174,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8308611740340376154, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e5c582b704d44bc5ac8a7db1c5957c8, type: 2}
+    - target: {fileID: -7554079478415764700, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e5c582b704d44bc5ac8a7db1c5957c8, type: 2}
+    - target: {fileID: -2679006199998391316, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e5c582b704d44bc5ac8a7db1c5957c8, type: 2}
+    - target: {fileID: -894695692759602850, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e5c582b704d44bc5ac8a7db1c5957c8, type: 2}
     - target: {fileID: 919132149155446097, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
       propertyPath: m_Name
       value: gate base
       objectReference: {fileID: 0}
+    - target: {fileID: 5627330234596827740, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e5c582b704d44bc5ac8a7db1c5957c8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4209604378348698759}
+      addedObject: {fileID: 3730824009680846970}
     - targetCorrespondingSourceObject: {fileID: -827776686643272843, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7184509469919960964}
@@ -292,7 +312,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
   m_PrefabInstance: {fileID: 5870177477971615820}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &4209604378348698759
+--- !u!111 &3730824009680846970
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,9 +321,9 @@ Animation:
   m_GameObject: {fileID: 6752697397319703837}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 1827226128182048838, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
   m_Animations:
-  - {fileID: 7400000, guid: 3c1e8c36561b04322841d014cd4c7b4e, type: 2}
+  - {fileID: 1827226128182048838, guid: 74fb38fd2b64ba941b1a33ce00687bd7, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
