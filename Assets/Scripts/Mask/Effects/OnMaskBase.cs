@@ -9,6 +9,7 @@ namespace Overcrowded
     {
         [SerializeField] private List<Mask> _masks;
         [SerializeField] private bool _invert;
+        [SerializeField] private bool _ignoreDelay;
 
         [Inject] private MaskChanger _maskChanger;
 
@@ -18,10 +19,13 @@ namespace Overcrowded
         [UsedImplicitly]
         public bool Matches { get; private set; } = false;
 
+        private bool _ignoringDelay;
 
         protected virtual void Awake()
         {
-            _maskChanger.OnMaskChanged += HandleMaskChanged;
+            _ignoringDelay = _ignoreDelay;
+
+            _maskChanger.SubscribeMaskChanged(HandleMaskChanged, _ignoreDelay);
 
             var mask = _maskChanger.CurrentMask;
             var matches = IsMatching(mask);
@@ -30,7 +34,7 @@ namespace Overcrowded
 
         protected virtual void OnDestroy()
         {
-            _maskChanger.OnMaskChanged -= HandleMaskChanged;
+            _maskChanger.UnsubscribeMaskChanged(HandleMaskChanged, _ignoreDelay);
         }
 
         public void AddMasks(params Mask[] masks)

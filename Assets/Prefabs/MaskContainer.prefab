@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Overcrowded::Overcrowded.EnableOnMask
   _masks: []
   _invert: 0
+  _ignoreDelay: 1
 --- !u!222 &6437118093209640675
 CanvasRenderer:
   m_ObjectHideFlags: 0

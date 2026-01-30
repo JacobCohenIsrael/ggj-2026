@@ -379,7 +379,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e642e0f0defd7423b97731a99a8857aa, type: 2}
     - {fileID: 11400000, guid: 37c02196fc47a49ab8ff00f3083fcab9, type: 2}
   _changerConfigs:
-    _maskChangeCooldown: 0.5
+    _delay: 0.26
+    _maskChangeCooldown: 0.375
   _levelMenuView: {fileID: 3411849425582513737}
   _playerWonService: {fileID: 4813063092241883678}
 --- !u!114 &4813063092241883678
