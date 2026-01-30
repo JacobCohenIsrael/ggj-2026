@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 792973897591722045, guid: 4710b9981b72f0641b9ef0c9766962e4, type: 3}
       propertyPath: m_Name
-      value: MaskOn_Disapear_Wall Variant
+      value: MaskOn_Disapear_Wall
       objectReference: {fileID: 0}
     - target: {fileID: 2019307853940658229, guid: 4710b9981b72f0641b9ef0c9766962e4, type: 3}
       propertyPath: m_LocalScale.z
@@ -63,5 +63,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 792973897591722045, guid: 4710b9981b72f0641b9ef0c9766962e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1972478961176181088}
   m_SourcePrefab: {fileID: 100100000, guid: 4710b9981b72f0641b9ef0c9766962e4, type: 3}
+--- !u!1 &7672994139091236231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 792973897591722045, guid: 4710b9981b72f0641b9ef0c9766962e4, type: 3}
+  m_PrefabInstance: {fileID: 7024144318616266170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1972478961176181088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672994139091236231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e28fa2dbd54409b707472257d7a34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Overcrowded::Overcrowded.EnableOnMask
+  _masks:
+  - {fileID: 11400000, guid: f147365cd8a78484bafdb85f1c8500db, type: 2}
+  _initialState: 1
