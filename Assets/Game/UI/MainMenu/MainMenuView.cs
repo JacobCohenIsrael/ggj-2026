@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Overcrowded.Game.UI
+namespace Overcrowded.Game.UI.MainMenu
 {
     public class MainMenuView : MonoBehaviour
     {

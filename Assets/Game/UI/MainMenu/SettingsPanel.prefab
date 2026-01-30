@@ -901,6 +901,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Overcrowded.Game.UI.SettingsView
   closeButton: {fileID: 3593120303166618451}
+  sfxSlider: {fileID: 8256347850010145258}
+  musicSlider: {fileID: 6226385952023788286}
+  audioMixer: {fileID: 24100000, guid: 99dcce352d2004076bfe10cbcdf9fe26, type: 2}
 --- !u!1 &5033039355033579381
 GameObject:
   m_ObjectHideFlags: 0
