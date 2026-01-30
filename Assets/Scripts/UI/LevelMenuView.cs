@@ -11,6 +11,8 @@ namespace Overcrowded
         [SerializeField] private Transform _settingsButtonsParent;
         [SerializeField] private Button _closeSettingsButton;
         [SerializeField] private float _duration = 0.3f;
+        [SerializeField] private Image _settingsBackground;
+        [SerializeField] private float _settingsBackgroundAlpha = 0.5f;
 
         public bool SettingsShown { get; private set; }
 
@@ -32,6 +34,11 @@ namespace Overcrowded
         [UsedImplicitly]
         public void OpenSettings()
         {
+            _settingsBackground.DOKill();
+            _settingsBackground
+                .DOFade(_settingsBackgroundAlpha, _duration)
+                .SetUpdate(true);
+
             _settingsButtonsParent.DOKill();
             _settingsButtonsParent
                 .DOLocalMoveX(0f, _duration)
@@ -45,6 +52,11 @@ namespace Overcrowded
 
         private void CloseSettings()
         {
+            _settingsBackground.DOKill();
+            _settingsBackground
+                .DOFade(0f, _duration)
+                .SetUpdate(true);
+
             _settingsButtonsParent.DOKill();
             _settingsButtonsParent
                 .DOLocalMoveX(_moveDistance, _duration)
