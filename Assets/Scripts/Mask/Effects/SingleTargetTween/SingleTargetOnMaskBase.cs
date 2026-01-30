@@ -6,14 +6,20 @@ namespace Overcrowded.SingleTargetTween
 {
     public abstract class SingleTargetOnMaskBase : MonoBehaviour
     {
+        [SerializeField] private bool _ignoreDelay;
+
         [Inject] private MaskChanger _maskChanger;
+
+        private bool _ignoringDelay;
 
         [UsedImplicitly]
         public Mask Mask { get; private set; } = null;
 
         protected virtual void Awake()
         {
-            _maskChanger.OnMaskChanged += HandleMaskChanged;
+            _ignoringDelay = _ignoreDelay;
+
+            _maskChanger.SubscribeMaskChanged(HandleMaskChanged, _ignoringDelay);
 
             var mask = _maskChanger.CurrentMask;
             SetImmediate(mask);
@@ -21,7 +27,7 @@ namespace Overcrowded.SingleTargetTween
 
         protected virtual void OnDestroy()
         {
-            _maskChanger.OnMaskChanged -= HandleMaskChanged;
+            _maskChanger.UnsubscribeMaskChanged(HandleMaskChanged, _ignoringDelay);
         }
 
         protected abstract void HandleMaskChanged(Mask mask);

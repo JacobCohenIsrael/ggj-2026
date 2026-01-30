@@ -1,4 +1,6 @@
 using System;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using Reflex.Attributes;
 using UnityEngine;
@@ -8,14 +10,34 @@ namespace Overcrowded
     public class MaskChanger
     {
         [Inject] private readonly MaskChangerConfigs _changerConfigs;
+
         private readonly MaskInventory _inventory;
 
-        public event Action<Mask> OnMaskChanged;
+        private event Action<Mask> OnMaskChangedWithoutDelay;
+        private event Action<Mask> OnMaskChanged;
+
+        public void SubscribeMaskChanged(Action<Mask> callback, bool ignoreDelay = false)
+        {
+            if (ignoreDelay)
+                OnMaskChangedWithoutDelay += callback;
+            else
+                OnMaskChanged += callback;
+        }
+
+        public void UnsubscribeMaskChanged(Action<Mask> callback, bool ignoreDelay = false)
+        {
+            if (ignoreDelay)
+                OnMaskChangedWithoutDelay -= callback;
+            else
+                OnMaskChanged -= callback;
+        }
 
         public Mask CurrentMask { get; private set; }
 
         private int _blockRefCount = 0;
         private double _lastChangeTime = float.NegativeInfinity;
+
+        private CancellationTokenSource _changeCancel = new();
 
         public MaskChanger(MaskInventory maskInventory)
         {
@@ -29,18 +51,38 @@ namespace Overcrowded
             return new MaskChangeBlocker(this);
         }
 
-        public bool TrySetMask(Mask newMask)
+        public void RequestSetMask(Mask newMask)
         {
             if (!CanChange(newMask))
-                return false;
+                return;
+
+            _changeCancel.Cancel();
+            _changeCancel.Dispose();
+            _changeCancel = new();
 
             CurrentMask = newMask;
-
             _lastChangeTime = Time.timeAsDouble;
+            OnMaskChangedWithoutDelay?.Invoke(newMask);
 
+            ChangeAfterDelay(newMask, _changerConfigs.Delay, _changeCancel.Token)
+                .Forget();
+        }
+
+        private UniTask ChangeAfterDelay(Mask newMask, double delay, CancellationToken cancellationToken)
+        {
+            if (delay > Mathf.Epsilon)
+            {
+                return UniTask.Delay(TimeSpan.FromSeconds(delay), cancellationToken: cancellationToken)
+                    .ContinueWith(() => ChangeMask(newMask));
+            }
+
+            ChangeMask(newMask);
+            return UniTask.CompletedTask;
+        }
+
+        private void ChangeMask(Mask newMask)
+        {
             OnMaskChanged?.Invoke(newMask);
-
-            return true;
         }
 
         public bool CanChange(Mask newMask)

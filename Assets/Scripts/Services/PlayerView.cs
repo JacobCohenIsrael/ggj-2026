@@ -29,7 +29,7 @@ namespace Overcrowded.Services
         {
             mesh.gameObject.SetActive(false);
 
-            _maskChanger.OnMaskChanged += HandleMaskChanged;
+            _maskChanger.SubscribeMaskChanged(HandleMaskChanged, true);
         }
 
         private void HandleMaskChanged(Mask mask)
@@ -44,7 +44,9 @@ namespace Overcrowded.Services
 
             if(index == -1)
                 return;
-            
+
+            _maskTransitionDirector.Stop();
+            _maskTransitionDirector.time = 0f;
             _maskTransitionDirector.Play();
         }
     }
