@@ -1,8 +1,8 @@
-using System;
 using Overcrowded.Services;
 using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Overcrowded.Game.UI.MainMenu
@@ -11,16 +11,13 @@ namespace Overcrowded.Game.UI.MainMenu
     {
         private const string SfxVolume = "SfxVolume";
         private const string MusicVolume = "MusicVolume";
-        
-        public Action OnClose;
-        
-        [SerializeField] private Button closeButton;
-        [SerializeField] private Slider sfxSlider;
-        [SerializeField] private Slider musicSlider;
-        [SerializeField] private AudioMixer audioMixer;
+
+        [FormerlySerializedAs("sfxSlider")] [SerializeField] private Slider _sfxSlider;
+        [FormerlySerializedAs("musicSlider")] [SerializeField] private Slider _musicSlider;
+        [FormerlySerializedAs("audioMixer")] [SerializeField] private AudioMixer _audioMixer;
         
         [Inject]
-        private LocalStorage localStorage;
+        private LocalStorage _localStorage;
         
         public void Hide()
         {
@@ -34,41 +31,34 @@ namespace Overcrowded.Game.UI.MainMenu
         
         private void Start()
         {
-            sfxSlider.value = localStorage.SfxVolume;
-            musicSlider.value = localStorage.MusicVolume;
-            audioMixer.SetFloat(SfxVolume, localStorage.SfxVolume);
-            audioMixer.SetFloat(MusicVolume, localStorage.MusicVolume);
+            _sfxSlider.value = _localStorage.SfxVolume;
+            _musicSlider.value = _localStorage.MusicVolume;
+            _audioMixer.SetFloat(SfxVolume, _localStorage.SfxVolume);
+            _audioMixer.SetFloat(MusicVolume, _localStorage.MusicVolume);
         }
         
         private void OnEnable()
         {
-            closeButton.onClick.AddListener(OnCloseButtonClicked);
-            sfxSlider.onValueChanged.AddListener(OnSfxSliderChanged);
-            musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
+            _sfxSlider.onValueChanged.AddListener(OnSfxSliderChanged);
+            _musicSlider.onValueChanged.AddListener(OnMusicSliderChanged);
         }
 
         private void OnDisable()
         {
-            closeButton.onClick.RemoveListener(OnCloseButtonClicked);
-            sfxSlider.onValueChanged.RemoveListener(OnSfxSliderChanged);
-            musicSlider.onValueChanged.RemoveListener(OnMusicSliderChanged);
-        }
-
-        private void OnCloseButtonClicked()
-        {
-            OnClose?.Invoke();
+            _sfxSlider.onValueChanged.RemoveListener(OnSfxSliderChanged);
+            _musicSlider.onValueChanged.RemoveListener(OnMusicSliderChanged);
         }
 
         private void OnSfxSliderChanged(float value)
         {
-            localStorage.SfxVolume = value;
-            audioMixer.SetFloat(SfxVolume, ToDecibels(value));
+            _localStorage.SfxVolume = value;
+            _audioMixer.SetFloat(SfxVolume, ToDecibels(value));
         }
 
         private void OnMusicSliderChanged(float value)
         {
-            localStorage.MusicVolume = value;
-            audioMixer.SetFloat(MusicVolume, ToDecibels(value));
+            _localStorage.MusicVolume = value;
+            _audioMixer.SetFloat(MusicVolume, ToDecibels(value));
         }
         
         private static float ToDecibels(float value01)
