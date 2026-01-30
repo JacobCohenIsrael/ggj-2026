@@ -13,7 +13,7 @@ namespace Overcrowded.Services
             //todo pretty animation 
             //todo play some SFX
             _userState.IncreaseLevel();
-            SceneManager.LoadScene($"Level_{_userState.Level}", LoadSceneMode.Single);
+            SceneManager.LoadScene($"Level_{_userState.Level + 1}", LoadSceneMode.Single);
         }
     }
 }
