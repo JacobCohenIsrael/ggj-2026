@@ -14,6 +14,8 @@ namespace Overcrowded
         {
             containerBuilder.RegisterValue(_maskRegistry);
             containerBuilder.RegisterValue(new MaskChanger());
+            containerBuilder.RegisterValue(_animationConfigs);
+            containerBuilder.RegisterValue(typeof(UserState));
             containerBuilder.RegisterValue(_maskEffectsVisualConfigs);
             containerBuilder.RegisterValue(_visualConfigs);
         }
