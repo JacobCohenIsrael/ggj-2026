@@ -79,8 +79,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 0, g: 0.038230382, b: 0.24528301, a: 0.4117647}
-  m_Intensity: 0.1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -177,13 +177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Overcrowded::Overcrowded.SingleTargetTween.DoLightColorTweenOnMask
   _maskColors:
   - _mask: {fileID: 11400000, guid: e642e0f0defd7423b97731a99a8857aa, type: 2}
-    _color: {r: 0, g: 0.039215688, b: 0.24705882, a: 0.4117647}
+    _color: {r: 1, g: 0, b: 0, a: 1}
   - _mask: {fileID: 11400000, guid: f147365cd8a78484bafdb85f1c8500db, type: 2}
-    _color: {r: 0, g: 0.039215688, b: 0.24705882, a: 0.4117647}
-  - _mask: {fileID: 11400000, guid: e2c10e42f0163470fbff3934ae708dac, type: 2}
-    _color: {r: 0, g: 0.039215688, b: 0.24705882, a: 0.4117647}
-  - _mask: {fileID: 11400000, guid: 37c02196fc47a49ab8ff00f3083fcab9, type: 2}
-    _color: {r: 0, g: 0.039215688, b: 0.24705882, a: 0.4117647}
+    _color: {r: 0, g: 0.10866976, b: 1, a: 1}
   _duration: 1
   _light: {fileID: 5887462085438713462}
 --- !u!1 &2060829660922452542
