@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 namespace Overcrowded.Game.UI.MainMenu
 {
+
     public class SettingsView : MonoBehaviour
     {
         private const string SfxVolume = "SfxVolume";

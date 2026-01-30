@@ -10,10 +10,27 @@ namespace Overcrowded
 
         [Inject] private InputConfigs _inputConfigs;
         [Inject] private MaskChanger _maskChanger;
+        [Inject] private LevelMenuView _levelMenuView;
 
         private const int KeyCount = 10;
 
         private void Update()
+        {
+            CheckSettingsInputs();
+
+            if (_levelMenuView.SettingsShown)
+                return;
+
+            CheckMaskInputs();
+        }
+
+        private void CheckSettingsInputs()
+        {
+            if (GetKeyActive(KeyCode.Escape))
+                _levelMenuView.ToggleSettings();
+        }
+
+        private void CheckMaskInputs()
         {
             var selectedMaskIndex = GetInputMaskIndex();
             if (!selectedMaskIndex.HasValue)

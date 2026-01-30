@@ -10,6 +10,7 @@ namespace Overcrowded
     {
         [SerializeField] private MaskInventory _inventory;
         [SerializeField] private MaskChangerConfigs _changerConfigs;
+        [SerializeField] private LevelMenuView _levelMenuView;
 
         public void InstallBindings(ContainerBuilder containerBuilder)
         {
@@ -17,6 +18,7 @@ namespace Overcrowded
             containerBuilder.RegisterType(typeof(MaskChanger), Lifetime.Singleton, Resolution.Eager);
             containerBuilder.RegisterType(typeof(PlayerDeathService), Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterValue(_changerConfigs);
+            containerBuilder.RegisterValue(_levelMenuView);
         }
     }
 }
