@@ -27,9 +27,7 @@ namespace Overcrowded.Services
 
         private void Awake()
         {
-#if UNITY_EDITOR
-            mesh.gameObject.SetActive(true);
-#endif
+            mesh.gameObject.SetActive(false);
 
             _maskChanger.OnMaskChanged += HandleMaskChanged;
         }
