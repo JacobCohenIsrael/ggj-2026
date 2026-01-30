@@ -11,7 +11,7 @@ namespace Overcrowded
 
         public void Set()
         {
-            _maskChanger.SetMask(_mask);
+            _maskChanger.TrySetMask(_mask);
         }
     }
 }

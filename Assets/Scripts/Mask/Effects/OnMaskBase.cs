@@ -28,6 +28,13 @@ namespace Overcrowded
             _maskChanger.OnMaskChanged -= HandleMaskChanged;
         }
 
+        public void AddMask(Mask mask)
+        {
+            _masks.Add(mask);
+
+            HandleMaskChanged(_maskChanger.CurrentMask);
+        }
+
         private void HandleMaskChanged(Mask newMask)
         {
             Mask = newMask;
