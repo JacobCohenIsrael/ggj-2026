@@ -51,5 +51,6 @@ namespace Overcrowded
         }
 
         protected abstract void OnMatchedChanged(Mask newMask, bool matches);
+        protected abstract void SetImmediate(Mask mask, bool matches);
     }
 }

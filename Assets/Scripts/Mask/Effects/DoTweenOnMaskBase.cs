@@ -38,5 +38,13 @@ namespace Overcrowded
             else
                 _tween.PlayBackwards();
         }
+
+        protected override void SetImmediate(Mask mask, bool matches)
+        {
+            if (matches)
+                _tween.Goto(_tween.Duration(), andPlay: false);
+            else
+                _tween.Goto(0, andPlay: false);
+        }
     }
 }
