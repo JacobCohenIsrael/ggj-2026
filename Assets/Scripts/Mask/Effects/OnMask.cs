@@ -10,6 +10,16 @@ namespace Overcrowded
 
         protected override void OnMatchedChanged(Mask newMask, bool matches)
         {
+            Invoke(matches);
+        }
+
+        protected override void SetImmediate(Mask mask, bool matches)
+        {
+            Invoke(matches);
+        }
+
+        private void Invoke(bool matches)
+        {
             if (matches)
                 _matches.Invoke();
             else
