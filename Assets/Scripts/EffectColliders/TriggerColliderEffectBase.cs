@@ -4,7 +4,7 @@ namespace Overcrowded
 {
     public abstract class TriggerColliderEffectBase : MonoBehaviour
     {
-        [SerializeField] private double _cooldown = 2f;
+        [SerializeField] private double _cooldown = 0f;
 
         private double _lastEffectTime = -Mathf.Infinity;
         private bool _activatedThisTrigger;
@@ -23,7 +23,8 @@ namespace Overcrowded
         
         private void OnTriggerExit(Collider other)
         {
-            _activatedThisTrigger = false;
+            if(TryDeactivate(other))
+                _activatedThisTrigger = false;
         }
 
         protected virtual bool CanActivate()
@@ -31,6 +32,8 @@ namespace Overcrowded
             return Time.timeAsDouble - _lastEffectTime >= _cooldown && !_activatedThisTrigger;
         }
 
-        protected abstract bool TryActivate(Collider collider);
+        protected abstract bool TryActivate(Collider other);
+
+        protected abstract bool TryDeactivate(Collider other);
     }
 }

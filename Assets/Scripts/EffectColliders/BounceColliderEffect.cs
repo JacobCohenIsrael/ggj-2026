@@ -28,6 +28,11 @@ namespace Overcrowded
             return true;
         }
 
+        protected override bool TryDeactivate(Collider other)
+        {
+            return true;
+        }
+
         private void Bounce(FPSController playerController)
         {
             Debug.Log("Bouncing player");

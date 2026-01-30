@@ -27,8 +27,8 @@ namespace Overcrowded
         public float Height = 1.8f;
 
         [Header("Slide")]
-        [Tooltip("Layer(s) considered as slide surfaces (e.g., ice)")]
-        public LayerMask SlideLayerMask;
+        //[Tooltip("Layer(s) considered as slide surfaces (e.g., ice)")]
+        //public LayerMask SlideLayerMask;
         [Tooltip("Deceleration when sliding (should be low, e.g., 1)")]
         public float SlideDeceleration = 1f;
 
@@ -50,7 +50,9 @@ namespace Overcrowded
         private Vector3 _horizontalVel; // planar velocity
         private float _pitch;
 
-        private bool _isSliding;
+        private int _slidingCounter;
+        public bool IsSliding => _slidingCounter > 0;
+        // private bool _isSliding;
 
         private void Awake()
         {
@@ -73,7 +75,7 @@ namespace Overcrowded
             if (_levelMenuView.SettingsShown)
                 return;
 
-            CheckSlideGround();
+            // CheckSlideGround();
             HandleLook();
             HandleMovement();
             HandleGravityAndGrounding();
@@ -91,7 +93,7 @@ namespace Overcrowded
             var inputDir = new Vector3(move.x, 0f, move.y);
             inputDir = Vector3.ClampMagnitude(inputDir, 1f);
 
-            if (_isSliding)
+            if (IsSliding)
             {
                 // Reduced control: blend input with current velocity, low acceleration
                 var targetSpeed = SlideMaxSpeed;
@@ -166,19 +168,24 @@ namespace Overcrowded
             Cursor.visible = !locked;
         }
 
-        private void CheckSlideGround()
+        // private void CheckSlideGround()
+        // {
+        //     const float checkDist = 0.3f;
+        //
+        //     var origin = transform.position + Vector3.up * 0.1f;
+        //
+        //     var sliding = _cc.isGrounded && Physics.Raycast(origin, Vector3.down, out _, checkDist, SlideLayerMask, QueryTriggerInteraction.Ignore);
+        //     SetSliding(sliding);
+        // }
+
+        public void SetSliding(bool sliding)
         {
-            const float checkDist = 0.3f;
+            if (sliding)
+                _slidingCounter++;
+            else
+                _slidingCounter--;
 
-            _isSliding = false;
-
-            if (!_cc.isGrounded)
-                return;
-
-            var origin = transform.position + Vector3.up * 0.1f;
-
-            if (Physics.Raycast(origin, Vector3.down, out _, checkDist, SlideLayerMask, QueryTriggerInteraction.Ignore))
-                _isSliding = true;
+            // _isSliding = sliding;
         }
     }
 }
