@@ -6,8 +6,9 @@ namespace Overcrowded
 {
     public class InputManager : MonoBehaviour
     {
+        [SerializeField] private Mask[] _masks;
+
         [Inject] private InputConfigs _inputConfigs;
-        [Inject] private MaskRegistry _maskRegistry;
         [Inject] private MaskChanger _maskChanger;
 
         private const int KeyCount = 10;
@@ -15,11 +16,16 @@ namespace Overcrowded
         private void Update()
         {
             var selectedMaskIndex = GetInputMaskIndex();
-            if (selectedMaskIndex.HasValue)
-            {
-                var mask = _maskRegistry.AllMasks[selectedMaskIndex.Value];
-                _maskChanger.TrySetMask(mask);
-            }
+            if (!selectedMaskIndex.HasValue)
+                return;
+
+            var index = selectedMaskIndex.Value;
+
+            if(index < 0 || index >= _masks.Length)
+                return;
+
+            var mask = _masks[index];
+            _maskChanger.TrySetMask(mask);
         }
 
         private int? GetInputMaskIndex()

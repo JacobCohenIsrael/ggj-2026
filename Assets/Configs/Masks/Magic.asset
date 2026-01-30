@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0d3b70cba2249c5bcddc7eb67b4099b, type: 3}
-  m_Name: Red
+  m_Name: Magic
   m_EditorClassIdentifier: Overcrowded::Overcrowded.Mask
-  _icon: {fileID: 21300000, guid: 3808512f088274c76ad486d2e173e9ce, type: 3}
+  _icon: {fileID: 21300000, guid: 3e8d24d4cc338446dbbcae371d70ffd0, type: 3}
