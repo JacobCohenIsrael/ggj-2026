@@ -13,7 +13,7 @@ namespace Overcrowded
 
         private void Update()
         {
-            if (transform.position.y >= _killHeight)
+            if (_player.transform.position.y >= _killHeight)
                 return;
 
             _playerDeathService.HandlePlayerDeath(_player);
