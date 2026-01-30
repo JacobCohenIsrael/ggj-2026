@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Overcrowded.SingleTargetTween
 {
     [RequireComponent(typeof(Light))]
-    public class DoLightColorTweenOnMask : SingleTargetOnMaskBase
+    public class DoLightColorTweenOnMask : SingleTargetTweenOnMaskBase<Color>
     {
         [Serializable]
         public class MaskLight
@@ -20,27 +20,31 @@ namespace Overcrowded.SingleTargetTween
         [SerializeField] private MaskLight[] _maskColors;
         [SerializeField] private float _channelSpeed = 1f;
 
-        public Color Color => _light.color;
+        public override Color Current => _light.color;
 
-        private Color _originalColor = Color.black;
-
-        private Color _targetColor;
-
-        protected override void Awake()
+        protected override void Set(Color value)
         {
-            base.Awake();
-
-            _originalColor = _light.color;
-            _targetColor = _light.color;
+            _light.color = value;
         }
 
-        private void Update()
+        protected override Color UpdateMoveTowards(Color targetValue)
         {
             if(_channelSpeed <= Mathf.Epsilon)
-                return;
+                return Target;
 
             var channelDelta = 1f / _channelSpeed * Time.deltaTime;
-            _light.color = MoveTowards(_targetColor, channelDelta);
+            return MoveTowards(targetValue, channelDelta);
+        }
+
+        protected override Color GetTargetForMask(Mask mask)
+        {
+            foreach (var maskColor in _maskColors)
+            {
+                if (maskColor.Mask == mask)
+                    return maskColor.Color;
+            }
+
+            return Initial;
         }
 
         private Color MoveTowards(Color color, float channelDelta)
@@ -50,28 +54,6 @@ namespace Overcrowded.SingleTargetTween
                 Mathf.MoveTowards(_light.color.g, color.g, channelDelta),
                 Mathf.MoveTowards(_light.color.b, color.b, channelDelta)
             );
-        }
-
-        private Color GetColorForMask(Mask mask)
-        {
-            foreach (var maskColor in _maskColors)
-            {
-                if (maskColor.Mask == mask)
-                    return maskColor.Color;
-            }
-
-            return _originalColor;
-        }
-
-
-        protected override void HandleMaskChanged(Mask mask)
-        {
-            _targetColor = GetColorForMask(mask);
-        }
-
-        protected override void SetImmediate(Mask mask)
-        {
-            _light.color = _targetColor = GetColorForMask(mask);
         }
     }
 }
