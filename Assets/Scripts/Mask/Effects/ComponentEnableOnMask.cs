@@ -11,5 +11,11 @@ namespace Overcrowded
             foreach (var component in _components)
                 component.enabled = matches;
         }
+
+        protected override void SetImmediate(Mask mask, bool matches)
+        {
+            foreach (var component in _components)
+                component.enabled = matches;
+        }
     }
 }

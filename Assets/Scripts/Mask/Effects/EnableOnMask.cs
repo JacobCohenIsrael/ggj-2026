@@ -6,5 +6,10 @@ namespace Overcrowded
         {
             gameObject.SetActive(matches);
         }
+
+        protected override void SetImmediate(Mask mask, bool matches)
+        {
+            gameObject.SetActive(matches);
+        }
     }
 }

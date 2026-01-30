@@ -20,12 +20,22 @@ namespace Overcrowded
 
             var newProgress = Mathf.MoveTowards(_progress, targetProgress, Time.deltaTime / Duration);
 
-            if(Mathf.Approximately(newProgress, _progress))
+            UpdateProgress(newProgress);
+        }
+
+        private void UpdateProgress(float progress)
+        {
+            if(Mathf.Approximately(progress, _progress))
                 return;
 
-            _progress = newProgress;
-
+            _progress = progress;
             Set(_progress);
+        }
+
+        protected override void SetImmediate(Mask mask, bool matches)
+        {
+            _progress = matches ? 1f : 0f;
+            UpdateProgress(_progress);
         }
 
         protected abstract void Set(float progress);
