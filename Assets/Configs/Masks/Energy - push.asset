@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0d3b70cba2249c5bcddc7eb67b4099b, type: 3}
-  m_Name: Green
+  m_Name: Energy - push
   m_EditorClassIdentifier: Overcrowded::Overcrowded.Mask
-  _icon: {fileID: 21300000, guid: 0f54a4e6a5ec24f6ba2afab40c65da76, type: 3}
+  _icon: {fileID: 21300000, guid: 3808512f088274c76ad486d2e173e9ce, type: 3}
