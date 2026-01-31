@@ -22,9 +22,7 @@ namespace Overcrowded.Services
             // Logic to handle player death, e.g., respawn, update stats, etc.
             Debug.Log("Player has died. Handling death logic...");
 
-            _darkOverlay.CreateFadeInTween(_darkOverlay.Death)
-                .OnComplete(() => _levelLoader.LoadLevel(player.gameObject.scene.name));
-
+            _levelLoader.LoadLevel(player.gameObject.scene.name, _darkOverlay.Death);
         }
     }
 }

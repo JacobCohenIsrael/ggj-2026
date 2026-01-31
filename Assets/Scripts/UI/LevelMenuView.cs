@@ -1,5 +1,8 @@
 using DG.Tweening;
 using JetBrains.Annotations;
+using Overcrowded.Game.UI.MainMenu;
+using Overcrowded.Services;
+using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +17,12 @@ namespace Overcrowded
         [SerializeField] private Image _settingsBackground;
         [SerializeField] private float _settingsBackgroundAlpha = 0.5f;
 
+        [SerializeField] private Button _restartButton;
+        [SerializeField] private Button _mainMenuButton;
+
+        [Inject] private LevelLoader _levelLoader;
+        [Inject] private DarkOverlayController _darkOverlay;
+
         public bool SettingsShown { get; private set; }
 
         private void Awake()
@@ -21,6 +30,23 @@ namespace Overcrowded
             SetPositionX(_settingsButtonsParent.transform, _moveDistance);
 
             _closeSettingsButton.onClick.AddListener(CloseSettings);
+
+            _restartButton.onClick.AddListener(RestartLevel);
+            _mainMenuButton.onClick.AddListener(GoToMainMenu);
+        }
+
+        private void GoToMainMenu()
+        {
+            _levelLoader.LoadLevel("MainMenu", _darkOverlay.SettingsToMenu);
+
+            CloseSettings();
+        }
+
+        private void RestartLevel()
+        {
+            _levelLoader.LoadLevel(gameObject.scene.name, _darkOverlay.SettingsRestart);
+
+            CloseSettings();
         }
 
         public void ToggleSettings()

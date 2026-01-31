@@ -12751,6 +12751,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4494288649480925577, guid: e16367b82600e584b9da701cbf2e85ea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7545314553729520370, guid: e16367b82600e584b9da701cbf2e85ea, type: 3}
       propertyPath: m_Name
       value: River (2)

@@ -1,4 +1,6 @@
+using System;
 using DG.Tweening;
+using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,8 +31,13 @@ namespace Overcrowded.Game.UI.MainMenu
         private bool _levelSelectionOpen;
         private bool _creditsOpen;
 
+        [Inject] private DarkOverlayController _darkOverlay;
+
         private void Awake()
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            
             SetPositionX(_settingsButtonsParent, _moveDistance);
             SetPositionX(_levelSelectionButtonsParent, _moveDistance);
 
@@ -47,6 +54,12 @@ namespace Overcrowded.Game.UI.MainMenu
                 _quitButton.gameObject.SetActive(false);
             else
                 _quitButton.onClick.AddListener(Application.Quit);
+        }
+
+        private void Start()
+        {
+            if (_darkOverlay.FadedIn)
+                _darkOverlay.CreateFadeOutTween(_darkOverlay.LevelStart);
         }
 
         private void Update()
