@@ -1,4 +1,3 @@
-using DG.Tweening;
 using Overcrowded.Game.UI.MainMenu;
 using Overcrowded.Services;
 using Overcrowded.UI;
@@ -50,7 +49,7 @@ namespace Overcrowded.MainMenu
             if (isLocked)
                 return;
 
-            levelLoader.LoadLevel(levelConfig.SceneReference.name, darkOverlay.MenuToLevel);
+            levelLoader.LoadLevel(levelConfig.SceneName, darkOverlay.MenuToLevel);
         }
     }
 }

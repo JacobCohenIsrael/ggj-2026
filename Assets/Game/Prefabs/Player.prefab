@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 8201349918035155367}
   - component: {fileID: 8692714610716269032}
   - component: {fileID: 2132680530798524811}
+  - component: {fileID: 6120867932987775303}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -280,6 +281,20 @@ MonoBehaviour:
   mesh: {fileID: 3295828209268274628}
   capsule: {fileID: 2382983815703858564}
   _maskTransitionDirector: {fileID: 985233019235933075}
+--- !u!114 &6120867932987775303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086946922112567186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5d97df9511341f89ae8d697a0812ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Overcrowded::Overcrowded.HeightAutoKill
+  _player: {fileID: 2132680530798524811}
+  _killHeight: -10
 --- !u!1 &4570308225366367095
 GameObject:
   m_ObjectHideFlags: 0

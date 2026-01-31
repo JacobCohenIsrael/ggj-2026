@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d3b70cba2249c5bcddc7eb67b4099b, type: 3}
   m_Name: Holographic
   m_EditorClassIdentifier: Overcrowded::Overcrowded.Mask
-  _icon: {fileID: 21300000, guid: 3e8d24d4cc338446dbbcae371d70ffd0, type: 3}
+  _icon: {fileID: 21300000, guid: 8a5d54810b2234c6da479de047a4987d, type: 3}

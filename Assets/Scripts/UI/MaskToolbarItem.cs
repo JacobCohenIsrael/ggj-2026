@@ -14,6 +14,10 @@ namespace Overcrowded
         [Inject] private VisualConfigs _visualConfigs;
         [Inject] private MaskInventory _inventory;
 
+        public Mask Mask => _mask;
+        public Image Icon => _icon;
+        public RectTransform RectTransform => (RectTransform)transform;
+
         private void Awake()
         {
             _icon.sprite = _mask.Icon;
