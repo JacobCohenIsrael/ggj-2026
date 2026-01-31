@@ -920,7 +920,8 @@ MonoBehaviour:
   _canvasGroup: {fileID: 2504539096910903776}
   _scroller: {fileID: 2296928974910686160}
   _studioIcon: {fileID: 7858469485112097434}
-  _scrollSpeed: 20
+  _scrollDuration: 20
+  _iconScrollDuration: 10
   _fadeDuration: 0.5
   _studioIconMoveDuration: 2
   _studioIconExtraMoveDistance: 100
