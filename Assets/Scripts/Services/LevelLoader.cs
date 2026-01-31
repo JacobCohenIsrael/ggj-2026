@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Overcrowded.Game.UI.MainMenu;
 using Reflex.Attributes;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Overcrowded.Services
@@ -9,7 +10,7 @@ namespace Overcrowded.Services
     {
         [Inject] private DarkOverlayController _darkOverlay;
 
-        public void LoadLevel(int level, DarkOverlayController.FadeParams fadeIn)
+        public void LoadLevel(int level, DarkOverlayController.FadeParams fadeIn, AnimationCurve curve = null)
         {
             _darkOverlay.CreateFadeInTween(fadeIn)
                 .OnComplete(() =>
@@ -19,7 +20,7 @@ namespace Overcrowded.Services
                 });
         }
 
-        public void LoadLevel(string sceneName, DarkOverlayController.FadeParams fadeIn)
+        public void LoadLevel(string sceneName, DarkOverlayController.FadeParams fadeIn, AnimationCurve curve = null)
         {
             _darkOverlay.CreateFadeInTween(fadeIn)
                 .OnComplete(() =>

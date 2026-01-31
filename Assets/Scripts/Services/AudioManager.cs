@@ -6,7 +6,28 @@ namespace Overcrowded.Services
     public class AudioManager : MonoBehaviour
     {
         [SerializeField] private AudioSource musicAudioSource;
+        [SerializeField] private AudioSource sfxAudioSource;
         private Coroutine musicFadeCoroutine;
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        
+        /// <summary>
+        /// Plays a SFX AudioClip using the sfxAudioSource. Stops any previous SFX.
+        /// </summary>
+        /// <param name="clip">The SFX AudioClip to play.</param>
+        /// <param name="volume">Volume (0-1), default 1.</param>
+        public void PlaySfx(AudioClip clip, float volume = 1f)
+        {
+            if (clip == null || sfxAudioSource == null) return;
+            sfxAudioSource.Stop();
+            sfxAudioSource.clip = clip;
+            sfxAudioSource.volume = volume;
+            sfxAudioSource.loop = false;
+            sfxAudioSource.Play();
+        }
 
         /// <summary>
         /// Changes the music audio clip with optional fade out and fade in delay.
