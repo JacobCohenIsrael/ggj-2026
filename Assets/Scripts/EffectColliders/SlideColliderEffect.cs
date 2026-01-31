@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Overcrowded
+namespace Overcrowded.EffectColliders
 {
     public class SlideColliderEffect : TriggerColliderEffectBase
     {
