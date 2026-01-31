@@ -542,6 +542,7 @@ GameObject:
   - component: {fileID: 177077607}
   - component: {fileID: 177077606}
   - component: {fileID: 177077605}
+  - component: {fileID: 177077608}
   m_Layer: 0
   m_Name: Welcome_Text (1)
   m_TagString: Untagged
@@ -713,6 +714,18 @@ RectTransform:
   m_AnchoredPosition: {x: 1.54, y: 3.57}
   m_SizeDelta: {x: 25.5579, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &177077608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177077604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6e9022e0ef4fa7a2d1153c8f2474da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Overcrowded::Overcrowded.LookAtCamera
 --- !u!4 &190255577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4360531120029405657, guid: ec0f32f6d2ad84b91ab9b52fdcea4545, type: 3}
@@ -2700,6 +2713,7 @@ GameObject:
   - component: {fileID: 718695822}
   - component: {fileID: 718695821}
   - component: {fileID: 718695820}
+  - component: {fileID: 718695823}
   m_Layer: 0
   m_Name: Welcome_Text
   m_TagString: Untagged
@@ -2870,6 +2884,18 @@ RectTransform:
   m_AnchoredPosition: {x: 1.8136293, y: 1.83}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &718695823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718695819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6e9022e0ef4fa7a2d1153c8f2474da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Overcrowded::Overcrowded.LookAtCamera
 --- !u!1001 &733889542
 PrefabInstance:
   m_ObjectHideFlags: 0
