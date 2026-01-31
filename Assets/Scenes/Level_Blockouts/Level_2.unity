@@ -14314,7 +14314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press <color=green>1,2,3,4 </color>To equip different masks
+  m_text: 'Press <color=#356645><B>1,2,3,4 </color><B>To equip different masks
 
 '
   m_isRightToLeft: 0
@@ -14456,7 +14456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 101.661, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.04, y: 1.466}
+  m_AnchoredPosition: {x: -3.04, y: 1.29}
   m_SizeDelta: {x: 25.5579, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1542158728
