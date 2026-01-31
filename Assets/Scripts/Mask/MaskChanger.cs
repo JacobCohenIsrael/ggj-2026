@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
+using Overcrowded.Services;
 using Reflex.Attributes;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace Overcrowded
     public class MaskChanger
     {
         [Inject] private readonly MaskChangerConfigs _changerConfigs;
+        [Inject] private AudioManager _audioManager;
+        [Inject] private AudioLibrary _audioLibrary;
 
         private readonly MaskInventory _inventory;
 
@@ -82,6 +85,7 @@ namespace Overcrowded
 
         private void ChangeMask(Mask newMask)
         {
+            _audioManager.PlaySfx(_audioLibrary.MaskChangeClipRecord.Clip, _audioLibrary.MaskChangeClipRecord.Volume);
             OnMaskChanged?.Invoke(newMask);
         }
 

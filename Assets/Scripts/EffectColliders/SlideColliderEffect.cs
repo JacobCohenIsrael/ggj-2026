@@ -1,13 +1,17 @@
 using System.Collections;
+using Overcrowded.Services;
+using Reflex.Attributes;
 using UnityEngine;
 
-namespace Overcrowded
+namespace Overcrowded.EffectColliders
 {
     public class SlideColliderEffect : TriggerColliderEffectBase
     {
         [SerializeField] private AudioSource slideAudioSource;
         [SerializeField] private float slideFadeDuration = 0.3f;
-        [SerializeField] private float targetSlideVolume = 0.5f;
+        
+        [Inject]
+        private AudioLibrary _audioLibrary;
         
         private int _playerLayer;
         private Coroutine slideFadeCoroutine;
@@ -15,6 +19,7 @@ namespace Overcrowded
         private void Awake()
         {
             _playerLayer = LayerMask.NameToLayer("Player");
+            slideAudioSource.clip = _audioLibrary.SlideEffectClipRecord.Clip;
         }
 
         protected override bool TryActivate(Collider other)
@@ -57,6 +62,7 @@ namespace Overcrowded
 
         private IEnumerator FadeSlideAudio(bool fadeIn)
         {
+            var audioClipRecord = _audioLibrary.SlideEffectClipRecord;
             if (fadeIn)
             {
                 slideAudioSource.volume = 0f;
@@ -65,11 +71,11 @@ namespace Overcrowded
                 float t = 0f;
                 while (t < slideFadeDuration)
                 {
-                    slideAudioSource.volume = Mathf.Lerp(0f, targetSlideVolume, t / slideFadeDuration);
+                    slideAudioSource.volume = Mathf.Lerp(0f, audioClipRecord.Volume, t / slideFadeDuration);
                     t += Time.deltaTime;
                     yield return null;
                 }
-                slideAudioSource.volume = targetSlideVolume;
+                slideAudioSource.volume = audioClipRecord.Volume;
             }
             else
             {
