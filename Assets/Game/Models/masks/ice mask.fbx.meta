@@ -3,7 +3,12 @@ guid: f7f2594025d885e44b01da3b54f2d6f9
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhatsApp_Image_2026_01_30_at_3_M
+    second: {fileID: 2100000, guid: c79472308778b4b2c84c4b577b93f110, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -33,7 +38,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 3.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -91,7 +96,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.035
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

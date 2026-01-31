@@ -2052,3 +2052,4 @@ MonoBehaviour:
   _mainMenuButtonsParent: {fileID: 4861370469197729991}
   _settingsButtonsParent: {fileID: 6096294269333720132}
   _levelSelectionButtonsParent: {fileID: 431014903615806325}
+  ambientMusicClip: {fileID: 8300000, guid: d42a05abae37d4bfe811eab324c208a7, type: 3}
