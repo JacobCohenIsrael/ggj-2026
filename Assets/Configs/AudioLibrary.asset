@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53c597be2774631915f98c5d0149b55, type: 3}
   m_Name: AudioLibrary
   m_EditorClassIdentifier: Overcrowded::Overcrowded.Services.AudioLibrary
-  LevelMusicClip: {fileID: 8300000, guid: 78b9e1a03a00048c59855e14e5f57451, type: 3}
-  MaskChangeClip: {fileID: 8300000, guid: c8d0196117abe4512a56bb63b9e61376, type: 3}
+  LevelMusicClipRecord:
+    Clip: {fileID: 8300000, guid: 78b9e1a03a00048c59855e14e5f57451, type: 3}
+    Volume: 0.5
+  MaskChangeClipRecord:
+    Clip: {fileID: 8300000, guid: c8d0196117abe4512a56bb63b9e61376, type: 3}
+    Volume: 0.3
+  SlideEffectClipRecord:
+    Clip: {fileID: 8300000, guid: 138a9954defb540ccb8be695bee1e389, type: 3}
+    Volume: 0.25

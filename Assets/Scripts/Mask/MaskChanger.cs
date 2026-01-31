@@ -85,7 +85,7 @@ namespace Overcrowded
 
         private void ChangeMask(Mask newMask)
         {
-            _audioManager.PlaySfx(_audioLibrary.MaskChangeClip, 0.25f);
+            _audioManager.PlaySfx(_audioLibrary.MaskChangeClipRecord.Clip, _audioLibrary.MaskChangeClipRecord.Volume);
             OnMaskChanged?.Invoke(newMask);
         }
 
