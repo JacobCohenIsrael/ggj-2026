@@ -23,8 +23,8 @@ namespace Overcrowded.Game.UI.MainMenu
         {
             _sfxSlider.value = _localStorage.SfxVolume;
             _musicSlider.value = _localStorage.MusicVolume;
-            _audioMixer.SetFloat(SfxVolume, _localStorage.SfxVolume);
-            _audioMixer.SetFloat(MusicVolume, _localStorage.MusicVolume);
+            _audioMixer.SetFloat(SfxVolume, ToDecibels(_localStorage.SfxVolume));
+            _audioMixer.SetFloat(MusicVolume, ToDecibels(_localStorage.MusicVolume));
         }
 
         private void OnEnable()
