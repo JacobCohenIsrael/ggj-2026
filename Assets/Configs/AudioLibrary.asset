@@ -21,3 +21,6 @@ MonoBehaviour:
   SlideEffectClipRecord:
     Clip: {fileID: 8300000, guid: 138a9954defb540ccb8be695bee1e389, type: 3}
     Volume: 0.25
+  ForceFieldClipRecord:
+    Clip: {fileID: 8300000, guid: 783a969176d794ea98a93a0e9caba566, type: 3}
+    Volume: 0.25
