@@ -85,16 +85,19 @@ namespace Overcrowded.Game.UI.MainMenu
             fadeParams.CanvasGroup.DOKill();
             fadeParams.CanvasGroup.alpha = 0f;
 
+            var tweenDuration = (fadeParams.Duration - fadeParams.HoldDuration) / 2f;
+
             var fadeIn = fadeParams.CanvasGroup
-                .DOFade(1f, fadeParams.Duration / 2f)
+                .DOFade(1f, tweenDuration)
                 .SetEase(fadeParams.Curve)
                 .SetUpdate(true)
                 .SetDelay(fadeParams.Delay);
 
             var fadeOut = fadeParams.CanvasGroup
-                .DOFade(0f, fadeParams.Duration / 2f)
+                .DOFade(0f, tweenDuration)
                 .SetEase(fadeParams.Curve)
-                .SetUpdate(true);
+                .SetUpdate(true)
+                .SetDelay(fadeParams.HoldDuration);
 
             var sequence = DOTween.Sequence();
             sequence.Append(fadeIn);
@@ -110,6 +113,9 @@ namespace Overcrowded.Game.UI.MainMenu
 
             [SerializeField] private float _duration = 1f;
             public float Duration => _duration;
+
+            [SerializeField] private float _holdDuration = 0f;
+            public float HoldDuration => _holdDuration;
 
             [SerializeField] private float _delay = 0f;
             public float Delay => _delay;
