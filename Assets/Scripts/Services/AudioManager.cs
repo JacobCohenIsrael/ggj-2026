@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +8,11 @@ namespace Overcrowded.Services
     {
         [SerializeField] private AudioSource musicAudioSource;
         private Coroutine musicFadeCoroutine;
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
 
         /// <summary>
         /// Changes the music audio clip with optional fade out and fade in delay.
@@ -80,7 +86,6 @@ namespace Overcrowded.Services
             // Play entrance (intro) clip if provided
             if (entranceClip != null)
             {
-                Debug.Log("Playing entrance clip");
                 musicAudioSource.clip = entranceClip;
                 musicAudioSource.loop = false;
                 musicAudioSource.Play();
@@ -99,7 +104,6 @@ namespace Overcrowded.Services
                     yield return null;
             }
             // Play loopable clip
-            Debug.Log("Playing Loop clip");
             musicAudioSource.clip = loopClip;
             musicAudioSource.loop = true;
             musicAudioSource.Play();
