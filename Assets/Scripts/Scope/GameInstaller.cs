@@ -13,6 +13,7 @@ namespace Overcrowded.Scope
         [SerializeField] private VisualConfigs _visualConfigs;
         [SerializeField] private InputConfigs _inputConfigs;
         [SerializeField] private DarkOverlayController _darkOverlayPrefab;
+        [SerializeField] private AudioManager _audioManagerPrefab;
         
         public void InstallBindings(ContainerBuilder containerBuilder)
         {
@@ -21,6 +22,7 @@ namespace Overcrowded.Scope
             containerBuilder.RegisterType(typeof(LevelLoader), Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterValue(_visualConfigs);
             containerBuilder.RegisterValue(_inputConfigs);
+            containerBuilder.RegisterFactory(_ => Instantiate(_audioManagerPrefab), Lifetime.Singleton, Resolution.Lazy);
             containerBuilder.RegisterFactory(_ => Instantiate(_darkOverlayPrefab), Lifetime.Singleton, Resolution.Eager);
         }
     }
