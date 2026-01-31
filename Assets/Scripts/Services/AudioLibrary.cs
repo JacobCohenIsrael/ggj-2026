@@ -9,6 +9,7 @@ namespace Overcrowded.Services
         public AudioClipRecord LevelMusicClipRecord;
         public AudioClipRecord MaskChangeClipRecord;
         public AudioClipRecord SlideEffectClipRecord;
+        public AudioClipRecord ForceFieldClipRecord;
     }
 
     [Serializable]

@@ -1,3 +1,5 @@
+using Overcrowded.Services;
+using Reflex.Attributes;
 using UnityEngine;
 
 namespace Overcrowded
@@ -7,6 +9,12 @@ namespace Overcrowded
     {
         [SerializeField] private float _force;
 
+        [Inject]
+        private AudioManager _audioManager;
+        
+        [Inject]
+        private AudioLibrary _audioLibrary;
+        
         private int _playerLayer;
 
         public Vector3 Direction => transform.up;
@@ -37,6 +45,7 @@ namespace Overcrowded
         {
             Debug.Log("Bouncing player");
             playerController.AddVelocity(Direction * _force);
+            _audioManager.PlaySfx(_audioLibrary.ForceFieldClipRecord.Clip, _audioLibrary.ForceFieldClipRecord.Volume);
         }
     }
 }
