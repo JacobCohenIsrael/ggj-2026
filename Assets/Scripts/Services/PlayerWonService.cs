@@ -13,14 +13,18 @@ namespace Overcrowded.Services
         [Inject] private LevelLoader _levelLoader;
         [Inject] private AudioManager _audioManager;
         
-        public void HandlePlayerWon(bool gainedMask)
+        public void HandlePlayerWon(bool gainedMask, bool isFinalLevel)
         {
             //todo pretty animation 
             _audioManager.PlaySfx(levelWonClip, 0.3f);
+
             var currentLevel = int.Parse(gameObject.scene.name["Level_".Length..]);
             _userState.SetLevelCompleted(currentLevel);
 
-            _levelLoader.LoadLevel(currentLevel + 1, _darkOverlay.LevelComplete);
+            if (isFinalLevel)
+                _levelLoader.LoadLevel("MainMenu", _darkOverlay.SettingsToMenu);
+            else
+                _levelLoader.LoadLevel(currentLevel + 1, _darkOverlay.LevelComplete);
 
             _darkOverlay.CreateGoodJobTween();
 

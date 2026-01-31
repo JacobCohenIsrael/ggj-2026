@@ -7,6 +7,7 @@ namespace Overcrowded
     public class OnReachedEnd : MonoBehaviour
     {
         [SerializeField] private bool _gainedAMask;
+        [SerializeField] private bool _isFinalLevel;
 
         [Inject] private PlayerWonService _playerWonService;
 
@@ -15,7 +16,7 @@ namespace Overcrowded
             if (!other.CompareTag("Player"))
                 return;
 
-            _playerWonService.HandlePlayerWon(_gainedAMask);
+            _playerWonService.HandlePlayerWon(_gainedAMask, _isFinalLevel);
         }
     }
 }
