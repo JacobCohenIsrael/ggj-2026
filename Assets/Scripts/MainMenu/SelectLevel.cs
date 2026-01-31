@@ -50,14 +50,7 @@ namespace Overcrowded.MainMenu
             if (isLocked)
                 return;
 
-            darkOverlay.CreateFadeInTween(darkOverlay.MenuToLevel)
-                .OnComplete(LoadScene);
-
-        }
-
-        private void LoadScene()
-        {
-            levelLoader.LoadLevel(levelConfig.SceneReference.name);
+            levelLoader.LoadLevel(levelConfig.SceneReference.name, darkOverlay.MenuToLevel);
         }
     }
 }

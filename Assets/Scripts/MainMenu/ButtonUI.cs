@@ -22,12 +22,12 @@ namespace Overcrowded
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            button.transform.DOScale(mouseOverTargetScale, mouseOverScaleDuration);
+            button.transform.DOScale(mouseOverTargetScale, mouseOverScaleDuration).SetUpdate(true);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            button.transform.DOScale(originScale, mouseOverScaleDuration);
+            button.transform.DOScale(originScale, mouseOverScaleDuration).SetUpdate(true);
         }
     }
 }

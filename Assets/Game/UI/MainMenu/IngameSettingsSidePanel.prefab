@@ -472,6 +472,8 @@ MonoBehaviour:
   _sfxSlider: {fileID: 8844372808521467565}
   _musicSlider: {fileID: 3016719387561358641}
   _audioMixer: {fileID: 24100000, guid: 99dcce352d2004076bfe10cbcdf9fe26, type: 2}
+  _restartButton: {fileID: 3775823906203688234}
+  _mainMenuButton: {fileID: 9023207867956874646}
 --- !u!1 &4364491401794881787
 GameObject:
   m_ObjectHideFlags: 0
