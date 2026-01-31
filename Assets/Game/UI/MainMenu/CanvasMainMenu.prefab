@@ -948,6 +948,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2514440611095716377, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514440611095716377, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514440611095716377, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514440611095716377, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514440611095716377, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514440611095716377, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2615378264554698953, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1094,9 +1118,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 502428410907933198, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
   m_PrefabInstance: {fileID: 217226385436991867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6671769821075422193 stripped
+--- !u!114 &3441209102673853642 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6887513953158519434, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3225174700626238897, guid: 9c885e63f4d084d8c9a16a1f3e6efd90, type: 3}
   m_PrefabInstance: {fileID: 217226385436991867}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2059,7 +2083,7 @@ MonoBehaviour:
   _openSettingsButton: {fileID: 4539941687516053652}
   _closeSettingsButton: {fileID: 4916065399730911683}
   _openLevelsButton: {fileID: 4447368393046152535}
-  _closeLevelsButton: {fileID: 6671769821075422193}
+  _closeLevelsButton: {fileID: 3441209102673853642}
   _openCreditsButton: {fileID: 4882557144050577527}
   _closeCreditsButton: {fileID: 5977099912694436954}
   _quitButton: {fileID: 5717231017742950304}
