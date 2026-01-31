@@ -16,7 +16,7 @@ namespace Overcrowded.Services
         public void HandlePlayerWon(bool gainedMask)
         {
             //todo pretty animation 
-            _audioManager.PlaySfx(levelWonClip);
+            _audioManager.PlaySfx(levelWonClip, 0.3f);
             var currentLevel = int.Parse(gameObject.scene.name["Level_".Length..]);
             _userState.SetLevelCompleted(currentLevel);
 
