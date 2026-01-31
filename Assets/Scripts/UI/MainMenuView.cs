@@ -1,8 +1,11 @@
 using DG.Tweening;
+using Overcrowded.Game.UI.MainMenu;
+using Overcrowded.Services;
+using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Overcrowded.Game.UI.MainMenu
+namespace Overcrowded.UI
 {
     public class MainMenuView : MonoBehaviour
     {
@@ -25,12 +28,20 @@ namespace Overcrowded.Game.UI.MainMenu
         [SerializeField] private Transform _settingsButtonsParent;
         [SerializeField] private Transform _levelSelectionButtonsParent;
 
+        [SerializeField] private AudioClip ambientMusicClip;
+        
         private bool _settingsOpen;
         private bool _levelSelectionOpen;
         private bool _creditsOpen;
 
+        [Inject] private DarkOverlayController _darkOverlay;
+        [Inject] private AudioManager _audioManager;
+
         private void Awake()
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            
             SetPositionX(_settingsButtonsParent, _moveDistance);
             SetPositionX(_levelSelectionButtonsParent, _moveDistance);
 
@@ -47,6 +58,17 @@ namespace Overcrowded.Game.UI.MainMenu
                 _quitButton.gameObject.SetActive(false);
             else
                 _quitButton.onClick.AddListener(Application.Quit);
+        }
+
+        private void Start()
+        {
+            if (_darkOverlay.FadedIn)
+                _darkOverlay.CreateFadeOutTween(_darkOverlay.LevelStart);
+
+            if (_audioManager != null && ambientMusicClip != null)
+            {
+                _audioManager.ChangeMusic(ambientMusicClip, fadeDelay: 1f);
+            }
         }
 
         private void Update()

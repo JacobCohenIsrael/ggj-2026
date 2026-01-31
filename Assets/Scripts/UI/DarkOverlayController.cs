@@ -30,6 +30,8 @@ namespace Overcrowded.Game.UI.MainMenu
         [SerializeField] private FadeParams _settingsToMenu;
         public FadeParams SettingsToMenu => _settingsToMenu;
 
+        public bool FadedIn { get; private set; }
+
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -40,6 +42,7 @@ namespace Overcrowded.Game.UI.MainMenu
 
         public TweenerCore<float, float, FloatOptions> CreateFadeInTween(FadeParams fadeParams)
         {
+            FadedIn = true;
             _canvasGroup.DOKill();
             _canvasGroup.blocksRaycasts = true;
             return _canvasGroup
@@ -50,6 +53,7 @@ namespace Overcrowded.Game.UI.MainMenu
 
         public TweenerCore<float, float, FloatOptions> CreateFadeOutTween(FadeParams fadeParams)
         {
+            FadedIn = false;
             _canvasGroup.DOKill();
             _canvasGroup.blocksRaycasts = false;
             return _canvasGroup

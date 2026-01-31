@@ -21,6 +21,7 @@ namespace Overcrowded
             containerBuilder.RegisterValue(_playerWonService);
             containerBuilder.RegisterValue(_changerConfigs);
             containerBuilder.RegisterValue(_levelMenuView);
+            containerBuilder.RegisterValue(Camera.main);
         }
     }
 }

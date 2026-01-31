@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4c764c8f3fc43a691d6feb6c592813, type: 3}
   m_Name: Level_5
   m_EditorClassIdentifier: Overcrowded::Overcrowded.UI.LevelConfig
-  sceneReference: {fileID: 102900000, guid: 0f43b6ac4344f9f489fbac5d9857f519, type: 3}
+  sceneName: Level_5
   levelName: The End

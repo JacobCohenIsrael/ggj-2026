@@ -16,20 +16,9 @@ namespace Overcrowded.Game.UI.MainMenu
         [FormerlySerializedAs("sfxSlider")] [SerializeField] private Slider _sfxSlider;
         [FormerlySerializedAs("musicSlider")] [SerializeField] private Slider _musicSlider;
         [FormerlySerializedAs("audioMixer")] [SerializeField] private AudioMixer _audioMixer;
-        
-        [Inject]
-        private LocalStorage _localStorage;
-        
-        public void Hide()
-        {
-            gameObject.SetActive(false);
-        }
-        
-        public void Show()
-        {
-            gameObject.SetActive(true);
-        }
-        
+
+        [Inject] private LocalStorage _localStorage;
+
         private void Start()
         {
             _sfxSlider.value = _localStorage.SfxVolume;
@@ -37,7 +26,7 @@ namespace Overcrowded.Game.UI.MainMenu
             _audioMixer.SetFloat(SfxVolume, _localStorage.SfxVolume);
             _audioMixer.SetFloat(MusicVolume, _localStorage.MusicVolume);
         }
-        
+
         private void OnEnable()
         {
             _sfxSlider.onValueChanged.AddListener(OnSfxSliderChanged);
@@ -48,6 +37,16 @@ namespace Overcrowded.Game.UI.MainMenu
         {
             _sfxSlider.onValueChanged.RemoveListener(OnSfxSliderChanged);
             _musicSlider.onValueChanged.RemoveListener(OnMusicSliderChanged);
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
         }
 
         private void OnSfxSliderChanged(float value)

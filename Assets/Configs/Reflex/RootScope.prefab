@@ -61,3 +61,4 @@ MonoBehaviour:
   _inputConfigs:
     _maskSelectionTrigger: 0
   _darkOverlayPrefab: {fileID: 4189931467723771944, guid: 256f4c59719254d02b65debe49b0ecd8, type: 3}
+  _audioManagerPrefab: {fileID: 107293606013314431, guid: a0247da1dc80547fab965eade1e48926, type: 3}

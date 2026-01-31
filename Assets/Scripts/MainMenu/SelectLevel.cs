@@ -1,4 +1,3 @@
-using DG.Tweening;
 using Overcrowded.Game.UI.MainMenu;
 using Overcrowded.Services;
 using Overcrowded.UI;
@@ -50,14 +49,7 @@ namespace Overcrowded.MainMenu
             if (isLocked)
                 return;
 
-            darkOverlay.CreateFadeInTween(darkOverlay.MenuToLevel)
-                .OnComplete(LoadScene);
-
-        }
-
-        private void LoadScene()
-        {
-            levelLoader.LoadLevel(levelConfig.SceneReference.name);
+            levelLoader.LoadLevel(levelConfig.SceneName, darkOverlay.MenuToLevel);
         }
     }
 }
