@@ -396,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b2571d576e470faca6e396b2085a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Overcrowded::Overcrowded.Services.PlayerWonService
+  levelWonClip: {fileID: 8300000, guid: b9802c900b3914cb6bf558966865d5b6, type: 3}
 --- !u!114 &728259351069011125
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Overcrowded::Overcrowded.Services.AudioManager
   musicAudioSource: {fileID: 7264245671030170112}
+  sfxAudioSource: {fileID: 2850889707625106365}
 --- !u!82 &7264245671030170112
 AudioSource:
   m_ObjectHideFlags: 0
