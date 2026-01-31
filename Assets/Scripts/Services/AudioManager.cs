@@ -46,6 +46,7 @@ namespace Overcrowded.Services
             if (fadeDelay <= 0f)
             {
                 musicAudioSource.clip = newClip;
+                musicAudioSource.loop = true;
                 musicAudioSource.Play();
                 yield break;
             }
@@ -60,6 +61,7 @@ namespace Overcrowded.Services
             musicAudioSource.volume = 0f;
             musicAudioSource.Stop();
             musicAudioSource.clip = newClip;
+            musicAudioSource.loop = true;
             musicAudioSource.Play();
             // Fade in
             for (float t = 0; t < fadeDelay; t += Time.deltaTime)
