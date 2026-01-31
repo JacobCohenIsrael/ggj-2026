@@ -599,6 +599,37 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3675063358605210388, guid: 40cc09049efc6474ea41c3bd7e7348c5, type: 3}
+      propertyPath: m_text
+      value: 'Rom Donag
+
+        Ksenia Yaglikov
+
+        Niv Caspi
+
+        Bar
+        Ronen
+
+        Jacob Cohen
+
+        Shir Ofir
+
+        Daniel Gluzman
+
+        Alon
+        Kaplan
+
+        Omri Abrahamson
+
+        Gal Ben Naim
+
+        Sahar malter
+
+        Alon
+        Talmi
+
+        Kfir Baluka'
+      objectReference: {fileID: 0}
     - target: {fileID: 3719745526277253887, guid: 40cc09049efc6474ea41c3bd7e7348c5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
