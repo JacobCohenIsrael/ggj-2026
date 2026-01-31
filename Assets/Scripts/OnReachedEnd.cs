@@ -6,6 +6,8 @@ namespace Overcrowded
 {
     public class OnReachedEnd : MonoBehaviour
     {
+        [SerializeField] private bool _gainedAMask;
+
         [Inject] private PlayerWonService _playerWonService;
 
         private void OnTriggerEnter(Collider other)
@@ -13,7 +15,7 @@ namespace Overcrowded
             if (!other.CompareTag("Player"))
                 return;
 
-            _playerWonService.HandlePlayerWon();
+            _playerWonService.HandlePlayerWon(_gainedAMask);
         }
     }
 }
