@@ -18,13 +18,22 @@ namespace Overcrowded.Services
             //todo pretty animation 
             _audioManager.PlaySfx(levelWonClip, 0.3f);
 
-            var currentLevel = int.Parse(gameObject.scene.name["Level_".Length..]);
-            _userState.SetLevelCompleted(currentLevel);
+            var sceneName = gameObject.scene.name;
 
-            if (isFinalLevel)
-                _levelLoader.LoadLevel("MainMenu", _darkOverlay.SettingsToMenu);
+            if(sceneName != "TestLevel")
+            {
+                var currentLevel = int.Parse(sceneName["Level_".Length..]);
+                _userState.SetLevelCompleted(currentLevel);
+
+                if (isFinalLevel)
+                    _levelLoader.LoadLevel("MainMenu", _darkOverlay.LevelComplete);
+                else
+                    _levelLoader.LoadLevel(currentLevel + 1, _darkOverlay.LevelComplete);
+            }
             else
-                _levelLoader.LoadLevel(currentLevel + 1, _darkOverlay.LevelComplete);
+            {
+                _levelLoader.LoadLevel("MainMenu", _darkOverlay.LevelComplete);
+            }
 
             _darkOverlay.CreateGoodJobTween();
 
