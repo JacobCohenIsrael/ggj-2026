@@ -1,8 +1,9 @@
-using System;
+using DG.Tweening;
+using Overcrowded.Game.UI.MainMenu;
+using Overcrowded.Services;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Overcrowded
@@ -16,6 +17,9 @@ namespace Overcrowded
         [SerializeField] private string _buttonPrefix = "Level ";
 
         [Inject] private UserState userState;
+        [Inject] private DarkOverlayController _darkOverlay;
+        [Inject] private LevelLoader _levelLoader;
+
         private const string LevelSceneName = "Level_";
 
         public bool Locked => levelNumber > userState.Level;
@@ -32,8 +36,15 @@ namespace Overcrowded
         {
             if (Locked)
                 return;
-            
-            SceneManager.LoadScene($"{LevelSceneName}{levelNumber}");
+
+            _darkOverlay.CreateFadeInTween(_darkOverlay.MenuToLevel)
+                .OnComplete(LoadScene);
+
+        }
+
+        private void LoadScene()
+        {
+            _levelLoader.LoadLevel($"{LevelSceneName}{levelNumber}");
         }
 
         private void OnDestroy()

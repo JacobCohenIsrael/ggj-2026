@@ -202,7 +202,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.1
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -259,10 +259,8 @@ MonoBehaviour:
   StickSensitivity: 120
   MaxPitch: 89
   Height: 1.8
-  SlideLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
   SlideDeceleration: 0.25
+  _slideColliderRadius: 0.1
   SlideControl: 0.2
   SlideMaxSpeed: 8
 --- !u!114 &2132680530798524811
@@ -389,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 6439377244119245287}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.316, y: 2, z: -0}
+  m_LocalPosition: {x: 0, y: 2, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
