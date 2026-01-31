@@ -1,55 +1,63 @@
 using DG.Tweening;
 using Overcrowded.Game.UI.MainMenu;
 using Overcrowded.Services;
+using Overcrowded.UI;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Overcrowded
+namespace Overcrowded.MainMenu
 {
     public class SelectLevel : MonoBehaviour
     {
-        [SerializeField] private int levelNumber;
         [SerializeField] private Button button;
         [SerializeField] private TMP_Text levelNumberText;
         [SerializeField] private GameObject locked;
-        [SerializeField] private string _buttonPrefix = "Level ";
-
+        [SerializeField] private string lockedText;
+        
         [Inject] private UserState userState;
-        [Inject] private DarkOverlayController _darkOverlay;
-        [Inject] private LevelLoader _levelLoader;
+        [Inject] private DarkOverlayController darkOverlay;
+        [Inject] private LevelLoader levelLoader;
+        
+        private LevelConfig levelConfig;
+        private int level;
+        private bool isLocked;
 
-        private const string LevelSceneName = "Level_";
-
-        public bool Locked => levelNumber > userState.Level;
-
-        private void Awake()
+        public void Set(LevelConfig config, int levelIndex)
         {
-            locked.SetActive(Locked);
+            levelConfig = config;
+            level = levelIndex + 1;
+            isLocked = level > userState.Level;
+            locked.SetActive(isLocked);
             
-            levelNumberText.text = $"{_buttonPrefix} {levelNumber}";
+            var levelName = isLocked ? lockedText : levelConfig.LevelName;
+            levelNumberText.text = $"{level} {levelName}";
+        }
+
+        private void OnEnable()
+        {
             button.onClick.AddListener(LoadLevelScene);
+        }
+
+        private void OnDisable()
+        {
+            button.onClick.RemoveListener(LoadLevelScene);
         }
 
         private void LoadLevelScene()
         {
-            if (Locked)
+            if (isLocked)
                 return;
 
-            _darkOverlay.CreateFadeInTween(_darkOverlay.MenuToLevel)
+            darkOverlay.CreateFadeInTween(darkOverlay.MenuToLevel)
                 .OnComplete(LoadScene);
 
         }
 
         private void LoadScene()
         {
-            _levelLoader.LoadLevel($"{LevelSceneName}{levelNumber}");
-        }
-
-        private void OnDestroy()
-        {
-            button.onClick.RemoveListener(LoadLevelScene);
+            levelLoader.LoadLevel(levelConfig.SceneReference.name);
         }
     }
 }

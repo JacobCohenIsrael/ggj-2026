@@ -92,13 +92,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 58.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 7289057773258907679}
   - component: {fileID: 1054021565483403237}
   - component: {fileID: 7141568236930708033}
+  - component: {fileID: 1911995254019489856}
   m_Layer: 5
   m_Name: LevelSelecButton
   m_TagString: Untagged
@@ -287,11 +288,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031c81331a4c4354965ebfad84d00f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Overcrowded::Overcrowded.SelectLevel
-  levelNumber: 0
   button: {fileID: 7289057773258907679}
   levelNumberText: {fileID: 8095442052101462181}
   locked: {fileID: 6435603362349205751}
-  _buttonPrefix: 'Level '
+  lockedText: Locked
+--- !u!114 &1911995254019489856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482652426871054142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20620ae30fdd0164c9bb5bdc717d3ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Reflex::Reflex.Components.GameObjectSelfInjector
+  _injectionStrategy: 2
 --- !u!1 &6435603362349205751
 GameObject:
   m_ObjectHideFlags: 0

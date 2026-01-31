@@ -8,5 +8,8 @@ namespace Overcrowded.UI
     {
         [SerializeField] private SceneAsset sceneReference;
         [SerializeField] private string levelName;
+        
+        public SceneAsset SceneReference => sceneReference;
+        public string LevelName => levelName;
     }
 }
