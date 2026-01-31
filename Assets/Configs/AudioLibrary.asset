@@ -16,8 +16,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 78b9e1a03a00048c59855e14e5f57451, type: 3}
     Volume: 0.5
   MaskChangeClipRecord:
-    Clip: {fileID: 8300000, guid: c8d0196117abe4512a56bb63b9e61376, type: 3}
-    Volume: 0.3
+    Clip: {fileID: 8300000, guid: fc6b7497ce6cf4b548a82e8d1630f4a0, type: 3}
+    Volume: 0.2
   SlideEffectClipRecord:
     Clip: {fileID: 8300000, guid: 138a9954defb540ccb8be695bee1e389, type: 3}
     Volume: 0.25
