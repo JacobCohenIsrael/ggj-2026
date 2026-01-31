@@ -260,7 +260,6 @@ MonoBehaviour:
   MaxPitch: 89
   Height: 1.8
   SlideDeceleration: 0.25
-  _slideColliderRadius: 0.1
   SlideControl: 0.2
   SlideMaxSpeed: 8
 --- !u!114 &2132680530798524811
@@ -386,14 +385,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6439377244119245287}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1068056422465951024}
   m_Father: {fileID: 2920060374095096962}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3609811115433449128
 Camera:
   m_ObjectHideFlags: 0
