@@ -10,7 +10,7 @@ namespace Overcrowded.Services
         [Inject] private DarkOverlayController _darkOverlay;
         [Inject] private LevelLoader _levelLoader;
         
-        public void HandlePlayerWon()
+        public void HandlePlayerWon(bool gainedMask)
         {
             //todo pretty animation 
             //todo play some SFX
@@ -18,6 +18,11 @@ namespace Overcrowded.Services
             _userState.SetLevelCompleted(currentLevel);
 
             _levelLoader.LoadLevel(currentLevel + 1, _darkOverlay.LevelComplete);
+
+            _darkOverlay.CreateGoodJobTween();
+
+            if(gainedMask)
+                _darkOverlay.CreatedYouGainedAMaskTween();
         }
     }
 }
