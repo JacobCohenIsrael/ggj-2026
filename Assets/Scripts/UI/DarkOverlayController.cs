@@ -40,21 +40,22 @@ namespace Overcrowded.Game.UI.MainMenu
 
         public TweenerCore<float, float, FloatOptions> CreateFadeInTween(FadeParams fadeParams)
         {
+            _canvasGroup.DOKill();
             _canvasGroup.blocksRaycasts = true;
             return _canvasGroup
                 .DOFade(1f, fadeParams.Duration)
                 .SetDelay(fadeParams.Delay)
-                .SetUpdate(true)
                 .SetEase(_curve);
         }
 
         public TweenerCore<float, float, FloatOptions> CreateFadeOutTween(FadeParams fadeParams)
         {
+            _canvasGroup.DOKill();
             _canvasGroup.blocksRaycasts = false;
             return _canvasGroup
                 .DOFade(0f, fadeParams.Duration)
+                .From(1f)
                 .SetDelay(fadeParams.Delay)
-                .SetUpdate(true).From(1f)
                 .SetEase(_curve);
         }
 

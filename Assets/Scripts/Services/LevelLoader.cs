@@ -22,7 +22,7 @@ namespace Overcrowded.Services
 
         private void DoPostLevelLoad()
         {
-            _darkOverlay.CreateFadeOutTween(_darkOverlay.LevelStart);
+            //nothing
         }
     }
 }

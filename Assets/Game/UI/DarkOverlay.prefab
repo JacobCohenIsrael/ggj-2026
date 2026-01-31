@@ -145,10 +145,10 @@ MonoBehaviour:
     _duration: 0.7
     _delay: 0
   _levelStart:
-    _duration: 0.4
-    _delay: 0
+    _duration: 0.8
+    _delay: 0.2
   _levelComplete:
-    _duration: 1
+    _duration: 0.8
     _delay: 0
   _menuToLevel:
     _duration: 0.3
