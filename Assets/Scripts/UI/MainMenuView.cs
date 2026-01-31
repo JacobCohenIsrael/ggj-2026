@@ -28,7 +28,8 @@ namespace Overcrowded.UI
         [SerializeField] private Transform _settingsButtonsParent;
         [SerializeField] private Transform _levelSelectionButtonsParent;
 
-        [SerializeField] private AudioClip ambientMusicClip;
+        [SerializeField] private AudioClip ambientMusicIntroClip;
+        [SerializeField] private AudioClip ambientMusicLoopClip;
         
         private bool _settingsOpen;
         private bool _levelSelectionOpen;
@@ -65,9 +66,9 @@ namespace Overcrowded.UI
             if (_darkOverlay.FadedIn)
                 _darkOverlay.CreateFadeOutTween(_darkOverlay.LevelStart);
 
-            if (_audioManager != null && ambientMusicClip != null)
+            if (_audioManager != null && ambientMusicIntroClip != null && ambientMusicLoopClip != null)
             {
-                _audioManager.ChangeMusic(ambientMusicClip, fadeDelay: 1f);
+                _audioManager.ChangeMusicWithIntro(ambientMusicIntroClip, ambientMusicLoopClip, fadeDelay: 1f);
             }
         }
 
