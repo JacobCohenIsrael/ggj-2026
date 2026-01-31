@@ -278,6 +278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Overcrowded::Overcrowded.SlideColliderEffect
   _cooldown: 0
+  slideAudioSource: {fileID: 0}
+  slideFadeDuration: 0.3
 --- !u!65 &125048525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1637,6 +1639,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1642981846
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1795647421541128206, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: _gainedAMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795647421541128206, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: _isFinalLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.719555
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.084719
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074974994491537130, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774215371561722093, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
+      propertyPath: m_Name
+      value: Level_End
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d50ed13d842feef47b30563c2e14c1a8, type: 3}
 --- !u!1001 &1649947854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2113,3 +2180,4 @@ SceneRoots:
   - {fileID: 1649947854}
   - {fileID: 774897361}
   - {fileID: 1599786795}
+  - {fileID: 1642981846}
