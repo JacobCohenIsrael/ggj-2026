@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53c597be2774631915f98c5d0149b55, type: 3}
+  m_Name: AudioLibrary
+  m_EditorClassIdentifier: Overcrowded::Overcrowded.Services.AudioLibrary
+  LevelMusicClipRecord:
+    Clip: {fileID: 8300000, guid: 78b9e1a03a00048c59855e14e5f57451, type: 3}
+    Volume: 0.5
+  MaskChangeClipRecord:
+    Clip: {fileID: 8300000, guid: fc6b7497ce6cf4b548a82e8d1630f4a0, type: 3}
+    Volume: 0.2
+  SlideEffectClipRecord:
+    Clip: {fileID: 8300000, guid: 138a9954defb540ccb8be695bee1e389, type: 3}
+    Volume: 0.25
+  ForceFieldClipRecord:
+    Clip: {fileID: 8300000, guid: 783a969176d794ea98a93a0e9caba566, type: 3}
+    Volume: 0.25
